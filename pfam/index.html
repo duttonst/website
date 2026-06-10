@@ -65,9 +65,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      color: var(--text);
       font-weight: 850;
       font-size: 1.35rem;
-      letter-spacing: -.04em
+      letter-spacing: -.04em;
+      text-decoration: none;
     }
 
     .app-icon {
@@ -103,6 +105,11 @@
       text-decoration: none;
       font-weight: 700;
       font-size: .95rem;
+    }
+
+    .nav-actions a:hover,
+    .nav-actions a:focus-visible {
+      color: var(--text);
     }
 
     .button {
@@ -347,6 +354,10 @@
 
     @media (max-width: 920px) {
 
+      .nav-actions .nav-secondary {
+        display: none;
+      }
+
       .hero,
       .feature,
       .feature:nth-child(even),
@@ -382,6 +393,30 @@
         padding: 34px 22px;
       }
     }
+
+    @media (max-width: 620px) {
+      header {
+        padding: 12px 0;
+      }
+
+      .brand > span {
+        display: none;
+      }
+
+      .product-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 11px;
+      }
+
+      .nav-actions {
+        gap: 14px;
+      }
+
+      .nav-actions a {
+        font-size: .88rem;
+      }
+    }
   </style>
 </head>
     
@@ -402,16 +437,17 @@
     </script>
     <div class="wrap">
       <nav>
-        <div class="brand">
+        <a class="brand" href="../pfam/">
           <img class="product-icon" src="../assets/PfAM.png" alt="Playlisty for Apple Music icon" />
           <span>Playlisty <span
             style="color:var(--hot)">for Apple Music</span></span>
-        </div>
+        </a>
         <div class="nav-actions">
-          <a href="../home">Home</a>
-          <a href="#features">Features</a>
+          <a class="nav-secondary" href="../home">Home</a>
+          <a class="nav-secondary" href="#features">Features</a>
+          <a href="../pfs/">For Spotify</a>
           <a href="../support/playlisty/">Support</a>
-          <a href="#download">Download</a>
+          <a class="nav-secondary" href="#download">Download</a>
         </div>
       </nav>
     </div>

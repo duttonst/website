@@ -42,8 +42,17 @@
         margin: auto
       }
 
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding: 26px 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(4, 8, 6, .7);
+        backdrop-filter: blur(18px);
+      }
+
       .nav {
-        height: 82px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -54,9 +63,11 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        color: var(--ink);
         font-weight: 850;
         font-size: 1.35rem;
-        letter-spacing: -.04em
+        letter-spacing: -.04em;
+        text-decoration: none
       }
 
       .mark {
@@ -70,16 +81,22 @@
         font-size: 1.45rem
       }
 
-      .links {
+      .nav-actions {
         display: flex;
-        gap: 28px;
+        gap: 18px;
         align-items: center
       }
 
-      .links a {
+      .nav-actions a {
         color: var(--muted);
         text-decoration: none;
-        font-weight: 700
+        font-weight: 700;
+        font-size: .95rem
+      }
+
+      .nav-actions a:hover,
+      .nav-actions a:focus-visible {
+        color: var(--ink)
       }
 
       .store {
@@ -344,7 +361,7 @@
       }
 
       @media (max-width:900px) {
-        .links a:not(.store):not(.support-link) {
+        .nav-actions .nav-secondary {
           display: none
         }
 
@@ -388,34 +405,60 @@
         }
       }
 
-      @media (max-width:600px) {
-        .links .store {
+      @media (max-width:620px) {
+        header {
+          padding: 12px 0
+        }
+
+        .brand > span {
           display: none
         }
+
+        .product-icon {
+          width: 46px;
+          height: 46px;
+          border-radius: 11px
+        }
+
+        .nav-actions {
+          gap: 14px
+        }
+
+        .nav-actions a {
+          font-size: .88rem
+        }
       }
+
     </style>
   </head>
 
   <body>
-    <header class="wrap nav">
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org/", 
-        "@type": "Product", 
-        "name": "Playlisty for Spotify",
-        "image": "https://www.obdura.com/pfs/assets/PfS.png",
-        "description": "Transfer playlists to Spotify in seconds from hundreds of different sources, including Apple Music, YouTube, Deezer, websites & files",
-        "brand": {
-          "@type": "Brand",
-          "name": "Playlisty"
+    <header>
+      <div class="wrap nav">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": "Playlisty for Spotify",
+          "image": "https://www.obdura.com/pfs/assets/PfS.png",
+          "description": "Transfer playlists to Spotify in seconds from hundreds of different sources, including Apple Music, YouTube, Deezer, websites & files",
+          "brand": {
+            "@type": "Brand",
+            "name": "Playlisty"
+          }
         }
-      }
-      </script>
-      <div class="brand"><img class="product-icon" src="../assets/PfS.png"
+        </script>
+        <a class="brand" href="../pfs/"><img class="product-icon" src="../assets/PfS.png"
           alt="Playlisty for Spotify icon" /><span>Playlisty <span style="color:var(--green2)">for Spotify</span></span>
+        </a>
+        <nav class="nav-actions">
+          <a class="nav-secondary" href="../home">Home</a>
+          <a class="nav-secondary" href="#features">Features</a>
+          <a href="../pfam/">For Apple Music</a>
+          <a href="../support/playlisty/">Support</a>
+          <a class="nav-secondary" href="#download">Download</a>
+        </nav>
       </div>
-      <nav class="links"><a href="../home">Home</a><a href="#features">Features</a><a href="#how">How it works</a><a class="support-link" href="../support/playlisty/">Support</a><a href="#download"
-          class="store">Download on the App Store</a></nav>
     </header>
     <main>
       <section class="wrap hero">
