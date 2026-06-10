@@ -344,7 +344,7 @@
       }
 
       @media (max-width:900px) {
-        .links a:not(.store) {
+        .links a:not(.store):not(.support-link) {
           display: none
         }
 
@@ -387,6 +387,12 @@
           font-size: clamp(3rem, 14vw, 5rem)
         }
       }
+
+      @media (max-width:600px) {
+        .links .store {
+          display: none
+        }
+      }
     </style>
   </head>
 
@@ -408,7 +414,7 @@
       <div class="brand"><img class="product-icon" src="../assets/PfS.png"
           alt="Playlisty for Spotify icon" /><span>Playlisty <span style="color:var(--green2)">for Spotify</span></span>
       </div>
-      <nav class="links"><a href="../home">Home</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#download"
+      <nav class="links"><a href="../home">Home</a><a href="#features">Features</a><a href="#how">How it works</a><a class="support-link" href="../support/playlisty/">Support</a><a href="#download"
           class="store">Download on the App Store</a></nav>
     </header>
     <main>
