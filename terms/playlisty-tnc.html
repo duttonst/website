@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playlisty Terms and Conditions — Obdura</title>
+  <meta name="description" content="Terms and Conditions for Playlisty from Obdura.">
+  <style>
+    :root {
+      --bg: #0f1117;
+      --panel: #171a23;
+      --panel-2: #1f2330;
+      --text: #f6f3ee;
+      --muted: #b9b3ad;
+      --line: rgba(255,255,255,.12);
+      --accent: #ff2d55;
+      --accent-2: #6c5ce7;
+      --blue: #1db6ff;
+      --cream: #fff6e8;
+      --shadow: 0 28px 80px rgba(0,0,0,.32);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(108,92,231,.34), transparent 34rem),
+        radial-gradient(circle at 86% 0%, rgba(255,45,85,.20), transparent 30rem),
+        linear-gradient(180deg, #111827 0%, var(--bg) 48%, #0b0d12 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1060px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.35rem;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--accent), var(--accent-2));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.24), 0 12px 30px rgba(0,0,0,.28);
+      font-size: 1.25rem;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .navlinks a { text-decoration: none; }
+
+    .hero {
+      padding: 88px 0 56px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 800;
+      font-size: .78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-size: clamp(3rem, 8vw, 6.7rem);
+      line-height: .93;
+      letter-spacing: -.075em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+    }
+
+    .meta-card {
+      margin-top: 28px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .meta-card span { color: var(--muted); }
+
+    main.policy { padding: 18px 0 96px; }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    aside {
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,255,255,.055);
+      padding: 18px;
+    }
+
+    aside h2 {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    aside a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 9px 10px;
+      border-radius: 12px;
+      font-size: .96rem;
+    }
+
+    aside a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.07);
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.045));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .summary {
+      padding: 34px;
+      background:
+        radial-gradient(circle at top right, rgba(29,182,255,.18), transparent 24rem),
+        linear-gradient(135deg, rgba(108,92,231,.55), rgba(255,45,85,.14));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: -.04em;
+      line-height: 1.05;
+    }
+
+    .summary p {
+      margin: 0;
+      color: var(--cream);
+      font-size: 1.12rem;
+      max-width: 760px;
+    }
+
+    .content { padding: 16px 34px 42px; }
+
+    section.block {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section.block:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+
+    p { margin: 0 0 16px; color: var(--muted); }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); }
+
+    ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    li {
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 11px 13px;
+      color: var(--cream);
+    }
+
+    li::before {
+      content: "•";
+      color: var(--blue);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .text-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill-link, .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 17px;
+      border-radius: 999px;
+      background: var(--cream);
+      color: #111827;
+      text-decoration: none;
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    .pill-link {
+      background: rgba(255,255,255,.08);
+      color: var(--cream);
+      border: 1px solid var(--line);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 860px) {
+      .policy-layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .navlinks { display: none; }
+      ul { grid-template-columns: 1fr; }
+      .summary, .content { padding-left: 24px; padding-right: 24px; }
+      .hero { padding-top: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="https://www.obdura.com/home">
+          <img class="product-icon" src="assets/obdura.png" alt="WinePlan icon" />
+          <span>Obdura Ltd</span>
+        </a>
+        <div class="navlinks" aria-label="Main navigation">
+          <a href="https://www.obdura.com/pfam">Playlisty for Apple Music</a>
+          <a href="https://www.obdura.com/pfs">Playlisty for Spotify</a>
+          <a href="https://www.obdura.com/wineplan">WinePlan</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero wrap">
+    <div>
+      <div class="eyebrow">Playlisty · Terms and Conditions</div>
+      <h1>The terms for using Playlisty.</h1>
+      <p class="lead">This agreement is between you and Obdura Ltd and governs your use of Playlisty, our playlist transfer app made available through the Apple App Store.</p>
+      <div class="meta-card"><strong>Last updated</strong><span>4 August 2020</span></div>
+    </div>
+  </section>
+
+  <main class="policy wrap">
+    <div class="policy-layout">
+      <aside aria-label="Terms contents">
+        <h2>Contents</h2>
+        <a href="#agreement">Agreement</a>
+        <a href="#license">License</a>
+        <a href="#intellectual-property">Intellectual Property</a>
+        <a href="#third-party-services">Third Party Services</a>
+        <a href="#payment-details">Payment Details</a>
+        <a href="#disclaimers">Disclaimers and Warranties</a>
+        <a href="#governing-law">Governing Law</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact Us</a>
+      </aside>
+
+      <article>
+        <div class="summary">
+          <h2>Using Playlisty means accepting these terms.</h2>
+          <p>If you do not agree with this Agreement, you are not entitled to use the Playlisty app.</p>
+        </div>
+
+        <div class="content">
+          <section class="block" id="agreement">
+            <h2>Agreement</h2>
+            <p>This Terms and Conditions Agreement (“Agreement”) is between you and <strong>Obdura Ltd</strong> (UK Company no. 13681260) and governs use of this app made available through the Apple App Store.</p>
+            <p>Installing the Playlisty App and using our Service constitutes acceptance of these Terms and Conditions. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Playlisty App.</p>
+          </section>
+
+          <section class="block" id="license">
+            <h2>License</h2>
+            <p>Click here to see our Apple license agreement.</p>
+            <div class="text-links">
+              <a class="pill-link" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple standard licence agreement</a>
+            </div>
+            <p>You retain all rights and ownership of your content. The Service does not claim any ownership rights to your content.</p>
+            <p>We want our Service to be safe, secure and in accordance with the law. Prohibited activities:</p>
+            <ul>
+              <li>You can’t do anything unlawful, misleading, or fraudulent or for an illegal or unauthorised purpose.</li>
+              <li>You can’t violate these Terms or our policies.</li>
+              <li>You can’t do anything to interfere with or impair the intended operation of the Service.</li>
+              <li>You can’t attempt to access or collect information in unauthorised ways.</li>
+            </ul>
+            <p>You’re free to stop using our Service at any time. We also reserve the right to suspend or end the Service at any time at our discretion and without notice. For example, we may suspend or terminate your use of the Service if you are not complying with these Terms, or use the Service in a manner that would cause us legal liability, disrupt the Service or disrupt others’ use of the Service.</p>
+          </section>
+
+          <section class="block" id="intellectual-property">
+            <h2>Intellectual Property</h2>
+            <p>The structure, organisation and code of the Service are the intellectual property of and are owned by Obdura Ltd. Obdura Ltd retains ownership of all proprietary rights in the Service and in all trade names, trademarks and service marks associated with the Service.</p>
+            <p>You may not remove, deface or obscure any of Obdura Ltd’s copyright or trademark notices and/or legends or other proprietary notices associated with the Service.</p>
+            <p>You may not reverse engineer, reverse compile or otherwise reduce to human readable form any software associated with the Service.</p>
+            <p>Obdura Ltd respects the intellectual property rights of others and expects its users to do the same. Copyright violations are taken seriously and will be investigated promptly. Notices of a possible infringement can be submitted in writing and must include a detailed description of the infringement.</p>
+          </section>
+
+          <section class="block" id="third-party-services">
+            <h2>Third Party Services</h2>
+            <p>Playlisty provides access to various third-party services. By using Playlisty to access these third party services you agree to be bound by their terms of service.</p>
+            <p>Specifically: by accessing YouTube content using Playlisty you agree to be bound by the YouTube Terms of Service.</p>
+            <div class="text-links">
+              <a class="pill-link" href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>
+            </div>
+          </section>
+
+          <section class="block" id="payment-details">
+            <h2>Payment Details</h2>
+            <p>The Service is offered free for creating playlists of up to 20 tracks. Above that length you will only be able to continue using the Service by paying in advance for a full licence that will unlock unlimited length playlists.</p>
+          </section>
+
+          <section class="block" id="disclaimers">
+            <h2>Disclaimers and Warranties</h2>
+            <p>The Service is provided ‘as is’ and with no warranty attached. Our responsibility for anything that happens on the Service is limited as much as the law will allow. You agree that we won’t be liable for errors, omissions, incidental damages, offensive content, malware and other things that we either cannot control or cannot constantly guarantee.</p>
+            <p>Obdura Ltd will use reasonable efforts to protect personal information in accordance with applicable law and the Playlisty privacy policy.</p>
+            <p>The Playlisty App utilises links to third party websites and services to facilitate the transfer of music playlists into your Apple Music library.</p>
+            <p>Note that these external sites are not operated by Obdura Ltd. Obdura Ltd has no control over and assumes no responsibility for the services, features, content, privacy policies or practices offered by other people or companies, even if you access them through our Service.</p>
+            <p>Please ensure you are familiar with the Terms and Conditions for any external services that you access before using our Service. You must comply with applicable third parties’ Terms and Conditions when using the Service.</p>
+            <p>Here are links for some of the key third party service providers which can be accessed by the Playlisty App:</p>
+            <div class="text-links">
+              <a class="pill-link" href="https://www.apple.com/legal/internet-services/itunes/">Apple Music Terms and Conditions</a>
+              <a class="pill-link" href="https://www.spotify.com/legal/end-user-agreement/">Spotify Terms and Conditions</a>
+              <a class="pill-link" href="https://www.youtube.com/t/terms">YouTube Terms and Conditions</a>
+            </div>
+            <p>This list is not exhaustive and these are provided here for your convenience only.</p>
+          </section>
+
+          <section class="block" id="governing-law">
+            <h2>Governing Law</h2>
+            <p>This Agreement shall be governed and construed in accordance with the laws of London, United Kingdom, without regard to its conflict of law provisions. Your use of the Service may also be subject to other local, state, national, or international laws.</p>
+            <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+            <p>These Terms constitute the entire agreement between you and Obdura Ltd regarding our Service and supersede and replace any prior agreements we might have between us regarding the Service.</p>
+          </section>
+
+          <section class="block" id="changes">
+            <h2>Changes to Terms and Conditions</h2>
+            <p>We may revise these Terms from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms on this page.</p>
+            <p>These changes are effective immediately after they are posted on this page. By continuing to access or use the Service after those revisions become effective, you agree to be bound by the revised Terms.</p>
+          </section>
+
+          <section class="block" id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us.</p>
+            <a class="contact-link" href="https://www.obdura.com/contact/">Contact Obdura</a>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Obdura Ltd. Apps by a small, independent developer.</div>
+  </footer>
+</body>
+</html>

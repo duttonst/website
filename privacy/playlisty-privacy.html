@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playlisty Privacy Policy — Obdura</title>
+  <meta name="description" content="Privacy Policy for Playlisty by Obdura Ltd." />
+  <style>
+    :root {
+      --bg: #0c1014;
+      --bg-soft: #111821;
+      --panel: rgba(255,255,255,.055);
+      --panel-strong: rgba(255,255,255,.085);
+      --text: #f5f7fb;
+      --muted: #aeb7c3;
+      --line: rgba(255,255,255,.13);
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --blue: #60a5fa;
+      --wine: #7f1d1d;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(34,197,94,.20), transparent 32rem),
+        radial-gradient(circle at 85% 12%, rgba(96,165,250,.14), transparent 28rem),
+        linear-gradient(180deg, #07100b 0%, var(--bg) 42%, #090b10 100%);
+      line-height: 1.65;
+    }
+
+    a { color: #8ee6ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 12, 16, .76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.2rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: white;
+      background: linear-gradient(145deg, var(--green), var(--green-dark));
+      box-shadow: 0 10px 28px rgba(34,197,94,.25);
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: .95rem;
+    }
+
+    .nav-links a { color: var(--muted); }
+
+    .hero {
+      padding: 86px 0 46px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #a7f3d0;
+      border: 1px solid rgba(34,197,94,.28);
+      background: rgba(34,197,94,.08);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: .86rem;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 6.4rem);
+      line-height: .93;
+      letter-spacing: -.075em;
+      max-width: 920px;
+    }
+
+    .hero p {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      max-width: 760px;
+    }
+
+    .updated {
+      margin-top: 28px;
+      color: #d1d5db;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: .95rem;
+    }
+
+    main { padding-bottom: 70px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 34px;
+      align-items: start;
+      margin-top: 34px;
+    }
+
+    aside {
+      position: sticky;
+      top: 92px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 20px 70px rgba(0,0,0,.16);
+    }
+
+    aside h2 {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+    }
+
+    aside a {
+      display: block;
+      padding: 9px 10px;
+      border-radius: 12px;
+      color: #d8dee9;
+      font-size: .95rem;
+    }
+
+    aside a:hover {
+      background: rgba(255,255,255,.07);
+      text-decoration: none;
+    }
+
+    .policy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+    }
+
+    .card.highlight {
+      border-color: rgba(34,197,94,.32);
+      background:
+        radial-gradient(circle at top right, rgba(34,197,94,.14), transparent 18rem),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.055));
+    }
+
+    h2.section-title {
+      margin: 0 0 16px;
+      font-size: clamp(1.7rem, 3.3vw, 2.75rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1.2rem;
+    }
+
+    p { margin: 0 0 16px; color: #d7dde6; }
+    p:last-child { margin-bottom: 0; }
+
+    ol, ul {
+      margin: 14px 0 0;
+      padding-left: 1.25rem;
+      color: #d7dde6;
+    }
+
+    li { margin: 10px 0; }
+
+    .plain-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .plain-list li {
+      margin: 0;
+      padding: 14px 16px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(145deg, var(--green), var(--green-dark));
+      box-shadow: 0 12px 30px rgba(34,197,94,.22);
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .button:hover { text-decoration: none; transform: translateY(-1px); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 32px 0;
+      font-size: .95rem;
+    }
+
+    @media (max-width: 850px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .nav-links { display: none; }
+      .hero { padding-top: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="https://www.obdura.com/home">
+          <img class="product-icon" src="assets/obdura.png" alt="WinePlan icon" />
+          <span>Obdura Ltd</span>
+        </a>
+        <div class="nav-links">
+          <a href="https://www.obdura.com/pfam">Playlisty for Apple Music</a>
+          <a href="https://www.obdura.com/pfs">Playlisty for Spotify</a>
+          <a href="https://www.obdura.com/contact/">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="kicker">Privacy Policy</div>
+      <h1>We’re really not very interested in your data.</h1>
+      <p>Playlisty is built to move playlists, not to build profiles about people. This page explains what we do — and mostly what we don’t do — with your information.</p>
+      <div class="updated">Last updated: <strong>20 May 2026</strong></div>
+    </section>
+
+    <div class="wrap layout">
+      <aside aria-label="Privacy policy sections">
+        <h2>Contents</h2>
+        <a href="#tldr">TL;DR</a>
+        <a href="#long-version">The long version</a>
+        <a href="#what-we-collect">What we collect</a>
+        <a href="#third-party">Third party services</a>
+        <a href="#analytics">App analytics</a>
+        <a href="#gdpr">UK GDPR</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact us</a>
+      </aside>
+
+      <section class="policy">
+        <article class="card highlight" id="tldr">
+          <h2 class="section-title">TL;DR</h2>
+          <p>Sorry but we’re really not very interested in you. Or your data. Or even your taste in music.</p>
+          <p>The fact is that we don’t get any data from you at all from our app and have no way to know who you are unless you send us an email or something. We don’t even have any servers to store data, should we ever get any. Which we won’t.</p>
+          <p>We do get a bit of data from Apple though. Just the stuff that all app developers get, like how many people started our app on an iPod Touch in Canada last Tuesday.</p>
+          <p>If you are one of those good people who agree to share their app analytics data with developers:</p>
+          <ol>
+            <li>Thank you, it’s hugely helpful to us in making our app better.</li>
+            <li>It means that if our app crashes we can see roughly where it crashed. That’s all though – it doesn’t tell us anything remotely personally identifiable.</li>
+          </ol>
+          <p>If you connect Playlisty to Apple Music you’ll need to be signed-in to Apple Music, but hopefully you guessed that already. What Apple do with your data is covered by your agreement with Apple.</p>
+          <p>If you connect Playlisty to Spotify, Deezer or YouTube, you’ll need to log in to Spotify, Deezer or Google respectively. What they do with your data is covered by your agreements with them, not us. You can find links to some of their privacy policies in the text below.</p>
+        </article>
+
+        <article class="card" id="long-version">
+          <h2 class="section-title">The long version</h2>
+          <p>Obdura Ltd (UK Company no. 13681260) built the Playlisty app as a Commercial app. This SERVICE is provided by Obdura Ltd and is intended for use as is.</p>
+          <p>This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service. If you choose to use our Service, then you agree to this policy.</p>
+          <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at <a href="https://www.obdura.com/">www.obdura.com</a> unless otherwise defined in this Privacy Policy.</p>
+        </article>
+
+        <article class="card" id="what-we-collect">
+          <h2 class="section-title">What we collect</h2>
+          <p>We built Playlisty to move playlists, not to build profiles about people.</p>
+          <p>Obdura does not collect, store, sell or share personal data on our own servers. Playlisty accesses music service data (such as playlists or account information) only to perform features requested by you, and this processing occurs directly between your device and the relevant music service provider (e.g. Apple Music, Spotify, YouTube). Obdura does not retain copies of this information.</p>
+          <p>Playlisty does not use third-party analytics, advertising SDKs or behavioural tracking.</p>
+          <p>If you contact us for support by email, we will use the information you provide (such as your email address and support details) only to respond to your enquiry and provide you with support.</p>
+          <p>We retain support correspondence only as long as reasonably necessary.</p>
+        </article>
+
+        <article class="card" id="third-party">
+          <h2 class="section-title">Third Party Information Collection and Use</h2>
+          <p>You may use the app to access data from third party services and these services may collect information used to identify you. Please ensure you are familiar with the privacy policies for any services that you access before using the app.</p>
+          <p>Below is a list of third party service providers which can be accessed by the app, including links to their relevant privacy policies:</p>
+          <ul class="plain-list">
+            <li>Playlisty uses the Apple Music API in order to read and create playlists and add music to your library. For details of data collected by Apple please view the <a href="https://support.apple.com/en-gb/HT204881">Apple Music Privacy Policy</a>. You can de-authorize Playlisty’s access to your Apple Music account at any time by visiting your Account Settings → Account Access and clicking the “Manage” button.</li>
+            <li>Playlisty uses the Spotify API to access the playlists, albums &amp; songs that you’ve added to your Spotify library. For details of the data collected by Spotify please view the <a href="https://www.spotify.com/uk/legal/privacy-policy/">Spotify Privacy Policy</a>. You can revoke Playlisty’s access to your Spotify account at any time by clicking <a href="https://www.spotify.com/account/apps/">here</a>.</li>
+            <li>Playlisty uses Google’s YouTube API Services to access playlist and song metadata in your YouTube library. For details of the data collected by Google please view the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. By using Playlisty to access your Google data you are agreeing to be bound by <a href="https://www.youtube.com/t/terms">YouTube’s Terms of Service</a>. Also please note that third parties may be able to serve content such as advertisements via this connection. You can revoke Playlisty’s access to your Google account at any time from the Google security settings page, <a href="https://security.google.com/settings/security/permissions">here</a>.</li>
+          </ul>
+          <p>Please note: this list is not exhaustive and these are provided here for your convenience only. The actual services available through Playlisty can &amp; will change over time.</p>
+        </article>
+
+        <article class="card" id="analytics">
+          <h2 class="section-title">App Analytics</h2>
+          <p>We want to remind you that whenever you use our app or any other app from the Apple App Store, Apple collects some basic data related to your use of the app e.g. when you used it, whether you upgraded or uninstalled it etc. This data collection is governed by your agreements with Apple, but you should be aware that they share some of this data with us &amp; all other app developers. The data we receive is completely anonymous.</p>
+          <p>Optionally you may also elect to share your device analytics with app developers (see the Privacy settings on your device). If you agree to do this, Apple will share more detailed information in the (hopefully unlikely) event of our app crashing. This information allows us to see the general area of our code where the crash happened and the nature of the crash. It enables us to improve our app, basically.</p>
+          <p>It does not allow us to see any data or log files, nor anything else which might be personally identifiable to you.</p>
+          <p>If you’d like to know what data Apple have collected about you, please visit <a href="https://privacy.apple.com/">https://privacy.apple.com</a>.</p>
+        </article>
+
+        <article class="card" id="gdpr">
+          <h2 class="section-title">UK GDPR</h2>
+          <p>We are a UK company. UK GDPR and applicable data protection law oblige us to inform you that, as a user, you have rights to access, erase and take copies of any data we hold. You may also object to how we use your data.</p>
+          <p>However, as previously stated, we do not hold any of your data. If our policy changes we will update this page.</p>
+        </article>
+
+        <article class="card" id="changes">
+          <h2 class="section-title">Changes to this Privacy Policy</h2>
+          <p>We may update our Privacy Policy from time to time.</p>
+          <p>We will not notify you of changes in advance as we do not know who you are and do not hold any information about you. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+          <p>Thus, you are advised to review this page periodically for any changes. Changes are effective immediately after they are posted.</p>
+        </article>
+
+        <article class="card" id="contact">
+          <h2 class="section-title">Contact Us</h2>
+          <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:contact@obdura.com">contact@obdura.com</a>.</p>
+          <div class="cta">
+            <a class="button" href="mailto:contact@obdura.com">Email Obdura</a>
+            <a class="button secondary" href="https://www.obdura.com/">Back to Obdura</a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Obdura Ltd. Playlisty Privacy Policy.</div>
+  </footer>
+</body>
+</html>

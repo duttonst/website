@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WinePlan Privacy Policy — Obdura</title>
+  <meta name="description" content="WinePlan privacy policy from Obdura.">
+  <style>
+    :root {
+      --bg: #0f1117;
+      --panel: #171a23;
+      --panel-2: #1f2330;
+      --text: #f6f3ee;
+      --muted: #b9b3ad;
+      --line: rgba(255,255,255,.12);
+      --wine: #76142b;
+      --wine-2: #a3163f;
+      --gold: #d4a84f;
+      --cream: #fff6e8;
+      --shadow: 0 28px 80px rgba(0,0,0,.32);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(163,22,63,.34), transparent 34rem),
+        radial-gradient(circle at 86% 0%, rgba(212,168,79,.13), transparent 30rem),
+        linear-gradient(180deg, #151018 0%, var(--bg) 48%, #0b0d12 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1060px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 26px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 7, 11, .58);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.35rem;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--wine-2), #4b0718);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.24), 0 12px 30px rgba(0,0,0,.28);
+      font-size: 1.35rem;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .navlinks a {
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 88px 0 56px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 800;
+      font-size: .78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 880px;
+      font-size: clamp(3rem, 8vw, 6.7rem);
+      line-height: .93;
+      letter-spacing: -.075em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+    }
+
+    .meta-card {
+      margin-top: 28px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .meta-card span {
+      color: var(--muted);
+    }
+
+    main.policy {
+      padding: 18px 0 96px;
+    }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    aside {
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,255,255,.055);
+      padding: 18px;
+    }
+
+    aside h2 {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    aside a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 9px 10px;
+      border-radius: 12px;
+      font-size: .96rem;
+    }
+
+    aside a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.07);
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.045));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .summary {
+      padding: 34px;
+      background:
+        radial-gradient(circle at top right, rgba(212,168,79,.18), transparent 24rem),
+        linear-gradient(135deg, rgba(118,20,43,.55), rgba(255,255,255,.045));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: -.04em;
+      line-height: 1.05;
+    }
+
+    .summary p {
+      margin: 0;
+      color: var(--cream);
+      font-size: 1.12rem;
+      max-width: 760px;
+    }
+
+    .content {
+      padding: 16px 34px 42px;
+    }
+
+    section.block {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section.block:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+
+    p { margin: 0 0 16px; color: var(--muted); }
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: var(--text); }
+
+    ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    li {
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 11px 13px;
+      color: var(--cream);
+    }
+
+    li::before {
+      content: "×";
+      color: var(--gold);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 17px;
+      border-radius: 999px;
+      background: var(--cream);
+      color: #261017;
+      text-decoration: none;
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 860px) {
+      .policy-layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .navlinks { display: none; }
+      ul { grid-template-columns: 1fr; }
+      .summary, .content { padding-left: 24px; padding-right: 24px; }
+      .hero { padding-top: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">
+          <img class="product-icon" src="https://www.obdura.com/wineplan/assets/WinePlan.png" alt="WinePlan icon" />
+          <span>Wine<span style="color:var(--gold)">Plan</span></span>
+        </div>
+        <div class="navlinks" aria-label="Main navigation">
+          <a href="https://www.obdura.com/wineplan">WinePlan</a>
+          <a href="https://www.obdura.com/pfam">Playlisty for Apple Music</a>
+          <a href="https://www.obdura.com/pfs">Playlisty for Spotify</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero wrap">
+    <div>
+      <div class="eyebrow">WinePlan · Privacy Policy</div>
+      <h1>Your cellar is your business.</h1>
+      <p class="lead">WinePlan helps you plan your wine consumption. What it does not do is collect personal data.</p>
+      <div class="meta-card"><strong>Last updated</strong><span>May 2026</span></div>
+    </div>
+  </section>
+
+  <main class="policy wrap">
+    <div class="policy-layout">
+      <aside aria-label="Policy contents">
+        <h2>Contents</h2>
+        <a href="#short-version">The short version</a>
+        <a href="#collection">What WinePlan collects</a>
+        <a href="#storage">Where data is stored</a>
+        <a href="#third-party">Third-party services</a>
+        <a href="#support">Support emails</a>
+        <a href="#deletion">Data deletion</a>
+        <a href="#children">Children</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+      </aside>
+
+      <article>
+        <div class="summary">
+          <h2>WinePlan does not collect, store, sell, share, analyse, monetise, or otherwise meddle with your personal data.</h2>
+          <p>There are no accounts. No advertising. No trackers. No analytics. No mysterious “engagement optimisation”. No third-party services quietly watching what you drink.</p>
+        </div>
+
+        <div class="content">
+          <section class="block" id="intro">
+            <p>WinePlan is an app to help you plan your wine consumption.</p>
+            <p>It helps you work out whether you have enough Bordeaux to survive retirement, whether you accidentally bought too much 2016 white Burgundy, and which wines you really ought to be drinking before biology intervenes.</p>
+            <p>What it does <strong>not</strong> do is collect personal data.</p>
+          </section>
+
+          <section class="block" id="short-version">
+            <h2>The short version</h2>
+            <p>WinePlan runs entirely on your device.</p>
+            <p>Your wine data is stored locally on your device and, if you use Apple iCloud, synchronised through your personal iCloud account so that your information can appear across your devices.</p>
+            <p>We do not have access to this information.</p>
+            <p>In fact, one of the occasional downsides of this arrangement is that if something goes wrong, we can’t see your cellar either.</p>
+          </section>
+
+          <section class="block" id="collection">
+            <h2>What information does WinePlan collect?</h2>
+            <p><strong>None.</strong></p>
+            <p>WinePlan does not collect personal information.</p>
+            <p>We do not collect:</p>
+            <ul>
+              <li>your name</li>
+              <li>your email address</li>
+              <li>your wine collection</li>
+              <li>your drinking plans</li>
+              <li>analytics data</li>
+              <li>advertising identifiers</li>
+              <li>tracking information</li>
+              <li>usage statistics</li>
+              <li>crash reports tied to you</li>
+              <li>any information about what you buy, drink, own, or plan to own</li>
+            </ul>
+            <p style="margin-top:18px;">Your data stays with you.</p>
+          </section>
+
+          <section class="block" id="storage">
+            <h2>Where is my data stored?</h2>
+            <p>WinePlan stores your wine information on your device.</p>
+            <p>If you have iCloud synchronisation enabled on your Apple devices, your data may also be stored in your personal Apple iCloud account so that it can sync between devices.</p>
+            <p>This storage and synchronisation is provided by Apple as part of your iCloud service.</p>
+            <p>WinePlan does not operate servers for storing your data and we do not have access to your iCloud information.</p>
+            <p>For more information about how Apple handles iCloud data, please see Apple’s privacy information.</p>
+          </section>
+
+          <section class="block" id="third-party">
+            <h2>Third-party services</h2>
+            <p>WinePlan does not use third-party analytics, advertising, tracking, or marketing services.</p>
+            <p>No advertising SDKs. No behavioural tracking. No hidden data brokers pretending to “improve your experience”.</p>
+            <p>The app simply does its job.</p>
+          </section>
+
+          <section class="block" id="support">
+            <h2>Support emails</h2>
+            <p>If you contact us for support, we will use the information you provide, such as your email address and the contents of your message, only to respond to your enquiry and provide support.</p>
+            <p>We do not use support emails for marketing, profiling, or anything unexpected.</p>
+          </section>
+
+          <section class="block" id="deletion">
+            <h2>Data deletion</h2>
+            <p>Because WinePlan does not maintain accounts or store your wine data on our servers, there is generally no account data for us to delete.</p>
+            <p>If you remove WinePlan from your device and delete its data, or remove data from iCloud, your information is removed from your own devices and Apple account.</p>
+            <p>Because we have no backup if things go wrong we strongly recommend that you regularly back-up your cellar data by exporting it using the export features that we provide.</p>
+          </section>
+
+          <section class="block" id="children">
+            <h2>Children</h2>
+            <p>WinePlan is not directed at children under 18.</p>
+            <p>Also, if someone under 18 is seriously planning a long-term cellar strategy for mature Barolo, we are both impressed and slightly concerned.</p>
+          </section>
+
+          <section class="block" id="changes">
+            <h2>Changes to this policy</h2>
+            <p>If we change this privacy policy, we will update this page and revise the “Last updated” date above.</p>
+            <p>We will continue to aim for a policy that is understandable by normal humans.</p>
+          </section>
+
+          <section class="block" id="contact">
+            <h2>Contact</h2>
+            <p>If you have questions about this privacy policy, please contact us at:</p>
+            <a class="contact-link" href="mailto:contact@obdura.com">contact@obdura.com</a>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Copyright © 2026 Obdura</div>
+  </footer>
+</body>
+</html>

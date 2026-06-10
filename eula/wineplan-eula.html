@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WinePlan EULA — Obdura</title>
+  <meta name="description" content="WinePlan End User Licence Agreement from Obdura.">
+  <style>
+    :root {
+      --bg: #0f1117;
+      --panel: #171a23;
+      --panel-2: #1f2330;
+      --text: #f6f3ee;
+      --muted: #b9b3ad;
+      --line: rgba(255,255,255,.12);
+      --wine: #76142b;
+      --wine-2: #a3163f;
+      --gold: #d4a84f;
+      --cream: #fff6e8;
+      --shadow: 0 28px 80px rgba(0,0,0,.32);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(163,22,63,.34), transparent 34rem),
+        radial-gradient(circle at 86% 0%, rgba(212,168,79,.13), transparent 30rem),
+        linear-gradient(180deg, #151018 0%, var(--bg) 48%, #0b0d12 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1060px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.35rem;
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--wine-2), #4b0718);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.24), 0 12px 30px rgba(0,0,0,.28);
+      font-size: 1.35rem;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .navlinks a { text-decoration: none; }
+
+    .hero {
+      padding: 88px 0 56px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 800;
+      font-size: .78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(3rem, 8vw, 6.7rem);
+      line-height: .93;
+      letter-spacing: -.075em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+    }
+
+    .meta-card {
+      margin-top: 28px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .meta-card span { color: var(--muted); }
+
+    main.policy { padding: 18px 0 96px; }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    aside {
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,255,255,.055);
+      padding: 18px;
+    }
+
+    aside h2 {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    aside a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 9px 10px;
+      border-radius: 12px;
+      font-size: .96rem;
+    }
+
+    aside a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.07);
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.045));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .summary {
+      padding: 34px;
+      background:
+        radial-gradient(circle at top right, rgba(212,168,79,.18), transparent 24rem),
+        linear-gradient(135deg, rgba(118,20,43,.55), rgba(255,255,255,.045));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: -.04em;
+      line-height: 1.05;
+    }
+
+    .summary p {
+      margin: 0;
+      color: var(--cream);
+      font-size: 1.12rem;
+      max-width: 760px;
+    }
+
+    .content { padding: 16px 34px 42px; }
+
+    section.block {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section.block:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+
+    p { margin: 0 0 16px; color: var(--muted); }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); }
+
+    ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    li {
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 11px 13px;
+      color: var(--cream);
+    }
+
+    li::before {
+      content: "•";
+      color: var(--gold);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 17px;
+      border-radius: 999px;
+      background: var(--cream);
+      color: #261017;
+      text-decoration: none;
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 860px) {
+      .policy-layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .navlinks { display: none; }
+      ul { grid-template-columns: 1fr; }
+      .summary, .content { padding-left: 24px; padding-right: 24px; }
+      .hero { padding-top: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">
+          <img class="product-icon" src="https://www.obdura.com/wineplan/assets/WinePlan.png" alt="WinePlan icon" />
+          <span>Wine<span style="color:var(--gold)">Plan</span></span>
+        </div>
+        <div class="navlinks" aria-label="Main navigation">
+          <a href="https://www.obdura.com/wineplan">WinePlan</a>
+          <a href="https://www.obdura.com/pfam">Playlisty for Apple Music</a>
+          <a href="https://www.obdura.com/pfs">Playlisty for Spotify</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero wrap">
+    <div>
+      <div class="eyebrow">WinePlan · End User Licence Agreement</div>
+      <h1>A sensible agreement for a slightly unserious cellar problem.</h1>
+      <p class="lead">Thank you for downloading WinePlan. By downloading or using WinePlan, you agree to this End User Licence Agreement.</p>
+      <div class="meta-card"><strong>Last updated</strong><span>May 2026</span></div>
+    </div>
+  </section>
+
+  <main class="policy wrap">
+    <div class="policy-layout">
+      <aside aria-label="Agreement contents">
+        <h2>Contents</h2>
+        <a href="#welcome">Welcome</a>
+        <a href="#licence">1. Licence</a>
+        <a href="#ownership">2. Ownership</a>
+        <a href="#data">3. Your Data</a>
+        <a href="#drinking-decisions">4. Drinking Decisions</a>
+        <a href="#availability">5. Availability and Updates</a>
+        <a href="#warranties">6. Warranties</a>
+        <a href="#liability">7. Liability</a>
+        <a href="#responsible-use">8. Responsible Use</a>
+        <a href="#termination">9. Termination</a>
+        <a href="#third-party">10. Third-Party Terms</a>
+        <a href="#law">11. Governing Law</a>
+        <a href="#changes">12. Changes</a>
+        <a href="#contact">13. Contact</a>
+      </aside>
+
+      <article>
+        <div class="summary">
+          <h2>The short version</h2>
+          <p>You can use WinePlan for personal use. Please don’t copy, resell, reverse engineer, or abuse it. We will try to make it work well. We are not responsible if your spreadsheet of first-growth Bordeaux predicts immortality.</p>
+        </div>
+
+        <div class="content">
+          <section class="block" id="welcome">
+            <h2>Welcome</h2>
+            <p>Thank you for downloading WinePlan.</p>
+            <p>WinePlan exists to help you plan your wine drinking with a level of seriousness that may or may not alarm your friends.</p>
+            <p>By downloading or using WinePlan, you agree to this agreement (“EULA”).</p>
+          </section>
+
+          <section class="block" id="licence">
+            <h2>1. Licence</h2>
+            <p>We grant you a limited, non-exclusive, non-transferable, revocable licence to use WinePlan on Apple-branded devices that you own or control, subject to Apple’s App Store terms and this agreement.</p>
+            <p>This licence is for personal, non-commercial use unless we explicitly agree otherwise.</p>
+            <p>You may not:</p>
+            <ul>
+              <li>copy or redistribute WinePlan</li>
+              <li>sell, rent, sublicense, or commercially exploit the app</li>
+              <li>reverse engineer, decompile, or attempt to extract source code except where local law explicitly permits it</li>
+              <li>use WinePlan in a way that damages or interferes with the app or related services</li>
+            </ul>
+          </section>
+
+          <section class="block" id="ownership">
+            <h2>2. Ownership</h2>
+            <p>WinePlan is licensed, not sold.</p>
+            <p>The app, its design, software, branding, text, and intellectual property remain the property of Obdura (or its licensors).</p>
+            <p>Your wine collection data remains yours.</p>
+            <p>We have no claim over your cellar, however impressive.</p>
+          </section>
+
+          <section class="block" id="data">
+            <h2>3. Your Data</h2>
+            <p>WinePlan runs locally on your device.</p>
+            <p>Data may be stored in your personal Apple iCloud account if you choose to enable iCloud synchronisation.</p>
+            <p>We do not host your wine data on our own servers and do not have access to it.</p>
+            <p>Please note: because we cannot access your data, we are also generally unable to recover it if it is lost.</p>
+            <p>You are responsible for maintaining appropriate backups through your Apple account and devices.</p>
+          </section>
+
+          <section class="block" id="drinking-decisions">
+            <h2>4. No Guarantees About Drinking Decisions</h2>
+            <p>WinePlan is intended as a planning and organisational tool.</p>
+            <p>Recommendations, forecasts, drink windows, stock projections, or suggested drinking timelines are estimates only, and the quality of the data you get out of it will depend on the quality of the data you put in.</p>
+            <p>WinePlan cannot guarantee:</p>
+            <ul>
+              <li>that a wine will be at its peak</li>
+              <li>that you will enjoy it</li>
+              <li>that your 2005 Bordeaux will outlive you</li>
+              <li>that buying “just one more case” is ever actually the correct answer</li>
+            </ul>
+            <p style="margin-top:18px;">Wine decisions remain your responsibility.</p>
+          </section>
+
+          <section class="block" id="availability">
+            <h2>5. Availability and Updates</h2>
+            <p>We may update WinePlan from time to time to improve features, fix bugs, or adapt to changes in Apple platforms.</p>
+            <p>We do not guarantee that the app will always be available, error-free, or compatible with every future operating system version, although we will do our best.</p>
+          </section>
+
+          <section class="block" id="warranties">
+            <h2>6. Disclaimer of Warranties</h2>
+            <p>To the maximum extent permitted by law, WinePlan is provided “as is” and “as available”.</p>
+            <p>We make no warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+            <p>In plain English: we aim to make WinePlan useful and reliable, but we cannot promise perfection.</p>
+          </section>
+
+          <section class="block" id="liability">
+            <h2>7. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, Obdura shall not be liable for indirect, incidental, special, consequential, or exemplary damages arising from your use of WinePlan.</p>
+            <p>This includes, without limitation:</p>
+            <ul>
+              <li>lost data</li>
+              <li>lost profits</li>
+              <li>missed drinking windows</li>
+              <li>overbuying Burgundy</li>
+              <li>underestimating how quickly guests can empty a cellar</li>
+            </ul>
+            <p style="margin-top:18px;">Nothing in this agreement limits liability where the law does not allow us to do so, including liability for fraud, fraudulent misrepresentation, death, or personal injury caused by negligence.</p>
+          </section>
+
+          <section class="block" id="responsible-use">
+            <h2>8. Responsible Use</h2>
+            <p>WinePlan is intended for lawful and responsible use.</p>
+            <p>Please drink responsibly and comply with the laws applicable in your country regarding alcohol.</p>
+            <p>WinePlan is for planning your wine consumption, not encouraging poor decisions.</p>
+          </section>
+
+          <section class="block" id="termination">
+            <h2>9. Termination</h2>
+            <p>This licence ends automatically if you materially breach this agreement.</p>
+            <p>You may stop using WinePlan at any time simply by deleting it from your device (though we hope you won’t).</p>
+          </section>
+
+          <section class="block" id="third-party">
+            <h2>10. Third-Party Terms</h2>
+            <p>WinePlan is distributed through Apple’s App Store and may be subject to Apple’s terms and policies.</p>
+            <p>You acknowledge that Apple has no obligation to provide maintenance or support services for WinePlan.</p>
+            <p>Apple and its subsidiaries are third-party beneficiaries of this agreement and may enforce relevant terms.</p>
+          </section>
+
+          <section class="block" id="law">
+            <h2>11. Governing Law</h2>
+            <p>This agreement is governed by the laws of England and Wales.</p>
+            <p>Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales, unless local consumer law provides otherwise.</p>
+          </section>
+
+          <section class="block" id="changes">
+            <h2>12. Changes to this Agreement</h2>
+            <p>We may update this EULA from time to time.</p>
+            <p>If we do, we will update the date above and publish the revised version.</p>
+            <p>We will try to avoid making it dramatically longer.</p>
+          </section>
+
+          <section class="block" id="contact">
+            <h2>13. Contact</h2>
+            <p>Questions?</p>
+            <p>Please contact us at:</p>
+            <a class="contact-link" href="mailto:contact@obdura.com">contact@obdura.com</a>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Copyright © 2026 Obdura</div>
+  </footer>
+</body>
+</html>

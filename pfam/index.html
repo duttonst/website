@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="apple-itunes-app" content="app-id=1459275972" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Move to Apple Music without losing your music</title>
+  <link rel="canonical" href="https://obdura.com/pfam"/>
+  <meta name="description"
+    content="Transfer your music library from Spotify &amp; dozens of other sources, direct to Apple Music. Prioritise audio quality or artwork &amp; keep playlists in sync using Siri Shortcuts." />
+<meta name="apple-itunes-app" content="app-id=1459275972" />
+  <style>
+    :root {
+      --bg: #07070b;
+      --panel: rgba(255, 255, 255, .075);
+      --panel2: rgba(255, 255, 255, .11);
+      --text: #f7f7fb;
+      --muted: #b9b8c6;
+      --hot: #ff2d55;
+      --hot2: #ff4f7b;
+      --green: #1ed760;
+      --line: rgba(255, 255, 255, .13);
+      --blue: #5ac8fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 8%, rgba(255, 45, 85, .34), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(90, 200, 250, .22), transparent 30%),
+        linear-gradient(180deg, #11111a 0%, var(--bg) 42%, #050507 100%);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1180px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 26px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 7, 11, .58);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      font-size: 1.35rem;
+      letter-spacing: -.04em
+    }
+
+    .app-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--hot), #b300ff);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 35px rgba(255, 45, 85, .35);
+    }
+
+    .app-icon::before {
+      content: "♫";
+      font-size: 20px;
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav-actions a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: white;
+      background: linear-gradient(135deg, var(--hot), var(--hot2));
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 15px 23px;
+      font-weight: 900;
+      box-shadow: 0 18px 50px rgba(255, 45, 85, .28);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, .1);
+      box-shadow: none;
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 68px;
+      align-items: center;
+      padding: 72px 0 98px;
+    }
+
+    .eyebrow {
+      color: var(--hot2);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(3.4rem, 7vw, 7rem);
+      line-height: .9;
+      letter-spacing: -.07em;
+    }
+
+    .lead {
+      font-size: clamp(1.18rem, 2vw, 1.52rem);
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 0 34px;
+    }
+
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 640px;
+      margin-top: 34px;
+    }
+
+    .proof div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .proof strong {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .proof span {
+      display: block;
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: .95rem;
+    }
+
+    .hero-shots {
+      position: relative;
+      min-height: 610px;
+    }
+
+    .phone {
+      width: min(340px, 82vw);
+      border-radius: 48px;
+      padding: 10px;
+      background: transparent;
+    }
+
+    .phone img {
+      display: block;
+      width: 100%;
+      border-radius: 38px;
+    }
+
+    .hero-shots .phone:first-child {
+      position: absolute;
+      right: 110px;
+      top: 0;
+      transform: rotate(-5deg);
+    }
+
+    .hero-shots .phone:last-child {
+      position: absolute;
+      right: 0;
+      top: 105px;
+      transform: rotate(5deg);
+    }
+
+    section {
+      padding: 92px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 820px;
+      margin-bottom: 54px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2.4rem, 4.8vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+
+    .section-head p,
+    .feature p,
+    .panel p {
+      color: var(--muted);
+      font-size: 1.22rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      min-height: 230px;
+    }
+
+    .card .emoji {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1.42rem;
+      letter-spacing: -.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 70px;
+      align-items: center;
+      margin: 86px 0;
+    }
+
+    .feature:nth-child(even) {
+      grid-template-columns: 1.08fr .92fr;
+    }
+
+    .feature:nth-child(even) .copy {
+      order: 2;
+    }
+
+    .feature h3 {
+      font-size: clamp(2rem, 3.2vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin: 0 0 18px;
+    }
+
+    .feature .shot {
+      justify-self: center;
+    }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini {
+      background: linear-gradient(180deg, var(--panel2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 34px;
+    }
+
+    .mini h3 {
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+    }
+
+    .mini p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .panel {
+      background: linear-gradient(135deg, rgba(255, 45, 85, .22), rgba(90, 200, 250, .13));
+      border: 1px solid var(--line);
+      border-radius: 38px;
+      padding: 58px;
+      text-align: center;
+    }
+
+    .panel p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      padding: 36px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 920px) {
+
+      .hero,
+      .feature,
+      .feature:nth-child(even),
+      .split-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .feature:nth-child(even) .copy {
+        order: 0;
+      }
+
+      .hero-shots {
+        min-height: auto;
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 10px 0 25px;
+      }
+
+      .hero-shots .phone:first-child,
+      .hero-shots .phone:last-child {
+        position: static;
+        transform: none;
+        flex: 0 0 285px;
+      }
+
+      .cards,
+      .proof {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        padding: 34px 22px;
+      }
+    }
+  </style>
+</head>
+    
+<body>
+  <header>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/", 
+      "@type": "Product", 
+      "name": "Playlisty for Apple Music",
+      "image": "https://www.obdura.com/pfam/assets/PfAM.png",
+      "description": "Transfer playlists to Apple Music in seconds from hundreds of different sources, including Spotify, YouTube, Deezer, websites & files",
+      "brand": {
+        "@type": "Brand",
+        "name": "Playlisty"
+      }
+    }
+    </script>
+    <div class="wrap">
+      <nav>
+        <div class="brand">
+          <img class="product-icon" src="assets/PfAM.png" alt="Playlisty for Apple Music icon" />
+          <span>Playlisty <span
+            style="color:var(--hot)">for Apple Music</span></span>
+        </div>
+        <div class="nav-actions">
+          <a href="#features">Features</a>
+          <a href="#download">Download</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div>
+        <div class="eyebrow">Spotify to Apple Music, properly</div>
+        <h1>Move your music without losing the plot.</h1>
+        <p class="lead">Switched to Apple Music? Playlisty helps you bring your Spotify playlists, liked songs, albums
+          and favourite artists with you — accurately, quickly and without a subscription.</p>
+        <p>
+          <a class="button" href="#">Download on the App Store</a>
+          <a class="button secondary" href="#features">See how it works</a>
+        </p>
+        <div class="proof">
+          <div><strong>Playlists</strong><span>including descriptions</span></div>
+          <div><strong>Favourites</strong><span>songs, albums and artists</span></div>
+          <div><strong>One-off</strong><span>small unlock, no subscription</span></div>
+        </div>
+      </div>
+
+      <div class="hero-shots" aria-label="Playlisty app screenshots">
+        <div class="phone"><img
+            src="assets/spotify.png"
+            alt="Playlisty browsing a Spotify library" /></div>
+        <div class="phone"><img
+            src="assets/discovery.png"
+            alt="Playlisty showing possible music matches" /></div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Most transfer apps are fast. Playlisty is careful.</h2>
+          <p>Music catalogues are messy. There can be multiple versions, remasters, edits, live recordings and
+            region-specific releases. Playlisty is built to help you choose the right Apple Music match instead of
+            silently swapping tracks or skipping them.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="emoji">🎯</div>
+            <h3>Better matching</h3>
+            <p>Prioritise sound quality, artwork or your own preferences when several Apple Music matches are possible.
+            </p>
+          </div>
+          <div class="card">
+            <div class="emoji">✅</div>
+            <h3>No silent mistakes</h3>
+            <p>If there is not an exact match, Playlisty does not just substitute or skip without checking with you.</p>
+          </div>
+          <div class="card">
+            <div class="emoji">⚡️</div>
+            <h3>Built for speed</h3>
+            <p>Move large Spotify libraries quickly, including thousands of tracks, without turning the process into a
+              weekend project.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="copy">
+            <h3>Bring your Spotify library with you.</h3>
+            <p>Import Spotify playlists, liked songs, albums and favourite artists into Apple Music. Keep playlist
+              descriptions, choose how albums are transferred, and make the move feel like a move — not a rebuild.</p>
+          </div>
+          <div class="shot">
+            <div class="phone"><img
+                src="assets/spotify.png"
+                alt="Spotify library inside Playlisty" /></div>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="copy">
+            <h3>Check the matches before they hit your library.</h3>
+            <p>Playlisty scans Apple Music for the best available version of each track, then gives you control where
+              the obvious answer is not obvious at all.</p>
+          </div>
+          <div class="shot">
+            <div class="phone"><img
+                src="assets/matches.png"
+                alt="Playlisty match selection screen" /></div>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="copy">
+            <h3>Not just Spotify.</h3>
+            <p>Import from YouTube, Deezer, web links, text, CSV, iTunes XML, M3U and more. Paste into the Scratchpad,
+              pick a file, or browse connected sources directly.</p>
+          </div>
+          <div class="shot">
+            <div class="phone"><img
+                src="assets/sources.png"
+                alt="Playlisty playlist sources" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split-panel">
+        <div class="mini">
+          <h3>Sync playlists with Shortcuts</h3>
+          <p>Create Siri Shortcut automations to keep selected playlists updated in the background.</p>
+        </div>
+        <div class="mini">
+          <h3>Back up your playlists</h3>
+          <p>Export precious playlists to an open file format so your music collection is not locked to one service.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap panel">
+        <h2>Make Apple Music feel like home.</h2>
+        <p>Move your playlists and favourites across with fewer bad matches, fewer missing tracks, and far less hassle.
+        </p>
+        <a href="https://apps.apple.com/us/app/playlisty-for-apple-music/id1459275972?itscg=30200&itsct=apps_box_badge&mttnsubad=1459275972" style="display: inline-block;">
+        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1574899200" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© Obdura. Playlisty for Apple Music requires an active Apple Music subscription. Read about our <a href="https://www.obdura.com/terms/playlisty-tnc.html">Terms and Conditions</a> and <a href="https://www.obdura.com/privacy/playlisty-privacy.html">Privacy Policy</a> here.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
