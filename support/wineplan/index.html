@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WinePlan Support</title>
+  <style>
+    :root {
+      --bg: #250711;
+      --bg2: #5b1024;
+      --cream: #fff4e2;
+      --muted: #d8b7c0;
+      --gold: #d6a84f;
+      --button: #a6072d;
+      --line: rgba(255, 255, 255, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--cream);
+      background: linear-gradient(180deg, var(--bg2), var(--bg) 55%);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1180px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 22px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(37, 7, 17, .72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    a.brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      font-size: 1.25rem;
+      letter-spacing: -.04em;
+      text-decoration: none;
+      color: var(--cream);
+    }
+
+    .product-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav-actions a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 160px);
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .construction {
+      max-width: 540px;
+    }
+
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: .9;
+      letter-spacing: -.06em;
+    }
+
+    h1 span { color: var(--gold); }
+
+    p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin: 0 0 36px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--button);
+      color: var(--cream);
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 26px;
+      font-weight: 800;
+      font-size: .95rem;
+      box-shadow: 0 12px 36px rgba(166, 7, 45, .3);
+    }
+
+    footer {
+      color: var(--muted);
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="../../home">
+          <img class="product-icon" src="../../assets/WinePlan-icon.png" alt="WinePlan icon">
+          <span>Wine<span style="color:var(--gold)">Plan</span></span>
+        </a>
+        <div class="nav-actions">
+          <a href="../../home">Home</a>
+          <a href="../../wineplan">WinePlan</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap construction">
+      <div class="icon">🍷</div>
+      <h1>Support is <span>coming soon.</span></h1>
+      <p>We're putting together the WinePlan help centre. Check back shortly — or get in touch if you need help now.</p>
+      <a class="button" href="mailto:contact@obdura.com">Contact us</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© Obdura. <a href="../../wineplan">WinePlan</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

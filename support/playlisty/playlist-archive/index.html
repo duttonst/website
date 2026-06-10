@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How can I use Playlisty to backup my Apple Music playlists? — Playlisty Support</title>
+  <meta name="description" content="How can I use Playlisty to backup my Apple Music playlists? — Playlisty Support">
+  <link rel="canonical" href="https://obdura.com/support/playlisty/playlist-archive/">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="brand-icons" aria-hidden="true">
+          <img src="../assets/playlisty-apple-music.png" alt="">
+          <img src="../assets/playlisty-spotify.png" alt="">
+        </span>
+        <span>Playlisty <span>Support</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../../../home/">Home</a>
+        <a href="../../../pfam/">For Apple Music</a>
+        <a href="../../../pfs/">For Spotify</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="article-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../">Support</a><span aria-hidden="true">/</span><span>Saving</span>
+        </nav>
+        <span class="article-category">Saving</span>
+        <h1>How can I use Playlisty to backup my Apple Music playlists?</h1>
+      </div>
+    </section>
+    <div class="wrap article-layout">
+      <article class="article-content">
+<p class="wp-block-paragraph">Starting with Playlisty 3.1 you can save your Apple Music playlists to a file and then restore them later using the “Files” tab.</p>
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph"><strong>Important</strong>: only Apple Music tracks will get backed up using this function. If your playlists contain your own local tracks they will NOT get backed up!</p>
+</blockquote>
+<h3 class="wp-block-heading">To backup your playlists:</h3>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<div class="wp-block-media-text is-stacked-on-mobile" style="grid-template-columns:20% auto"><figure class="wp-block-media-text__media"><img alt="" class="wp-image-1180 size-full" height="1024" src="../assets/backup-share.png" width="474"/></figure><div class="wp-block-media-text__content">
+
+<ul class="wp-block-list">
+<li>Navigate to the “Files” tab in Playlisty and then select the hard-disk icon from the picker at the top-right of that screen. You should be able to see a tree view of all of the playlists in your library.</li>
+<li>Select the playlists you want to back up and tap “Next…”</li>
+<li>Playlisty will then go through a “Reading” phase where it retrieves all available identifiers for the tracks you’ve selected. Once reading is complete, hit “Save” as you normally would. Note: it’s not worth “fixing” any tracks which have not matched at this point. All tracks will be written to your archive file – regardless of whether they matched – and if any need fixing you’ll be able to do that when you import them later.</li>
+<li>When the “Save to Apple Music” screen pops-up you’ll see a new “Save to a file” tab. Select this and tap “Start”.</li>
+<li>You’ll be prompted for a location to save the resulting file.</li>
+<li>That’s it! Playlisty will create a .plif (PlayList Interchange Format) file at the location you selected.</li>
+</ul>
+</div></div>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h3 class="wp-block-heading">To restore your playlists:</h3>
+<div class="wp-block-media-text is-stacked-on-mobile" style="grid-template-columns:20% auto"><figure class="wp-block-media-text__media"><img alt="" class="wp-image-1181 size-full" height="1024" src="../assets/backup-save-file.png" width="474"/></figure><div class="wp-block-media-text__content">
+
+<ul class="wp-block-list">
+<li>Navigate to the “Files” tab in Playlisty and then select the download icon from the picker at the top-left of the screen. Use the ‘+’ button to add the .plif file you created earlier. Hit “Next…”</li>
+<li>Once reading is complete you will have the opportunity to select the playlists you want to restore from the .plif file by checking/unchecking the “Save?” checkbox next to each. If any tracks need “fixing” you should do it here.</li>
+<li>Hit “Save” and save the selected playlists to your Apple Music library as you normally would.</li>
+</ul>
+</div></div>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h3 class="wp-block-heading">What exactly gets backed up?</h3>
+<p class="wp-block-paragraph">If you save one or more playlists with this function, the playlist metadata (name, description, curator<sup>1</sup>) and tracks (name, artist, album &amp; identifiers, where available) will be written to the resulting file.</p>
+<p class="wp-block-paragraph">This means that if you immediately restore the playlist to an account in the same geographic region then the restored playlist should be an exact copy of the original apart from the playlist artwork (unfortunately it’s not currently possible to back this up).</p>
+<p class="wp-block-paragraph">If, when you come to restore the file, some of the tracks are no longer available (e.g. because they have been removed from the catalog or you have moved to a different region) Playlisty will attempt to find the best possible matches for these tracks at that time.</p>
+<p class="wp-block-paragraph"><sup>1</sup><em>Please note that curator will not correctly populated until Apple make it available in a future release</em></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h3 class="wp-block-heading">What are PlayList Interchange Format (PLIF) files?</h3>
+<p class="wp-block-paragraph">PLIF files are open standard files containing a definition of your playlists in JSON data interchange format. Each file can contain any number of playlists and there are a multitude of tools (other than Playlisty) which you can use to explore and extract data from them, should you wish.</p>
+<p class="wp-block-paragraph">To get you started we’ve published a script written in the Python language which will extract all playlists from a PLIF file and write each to a separate CSV file which you can open in a tool such as Excel. The script can be found here: <a href="https://github.com/playlisty/extract_playlists">https://github.com/playlisty/extract_playlists</a>.</p>
+      </article>
+      <aside class="article-aside">
+        <div class="aside-card">
+          <h2>More in Saving</h2>
+          <a class="aside-link" href="../sync/"><span>Playlisty says it’s finished saving to Apple Music but some tracks or playlists are missing</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../sync-function/"><span>How does the “Add to existing playlist” function work?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../save-to-library-or-playlist/"><span>What’s the difference between “Save to library” and “Save to playlist”?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../save-to-new-playlists/"><span>What’s the difference between “Save to new playlists” and “Save to your library ‘as is’”?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../read-only/"><span>Why is Playlisty telling me my Apple Music playlist is read-only?</span><span aria-hidden="true">→</span></a>
+        </div>
+        <div class="aside-card">
+          <h2>Need more help?</h2>
+          <p>Contact us and we’ll help you get things sorted.</p>
+          <a class="button" href="mailto:contact@obdura.com">Contact support</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>&copy; Obdura Ltd</span>
+      <span class="footer-links">
+        <a href="../../../privacy/playlisty-privacy.html">Privacy</a>
+        <a href="../../../terms/playlisty-tnc.html">Terms</a>
+        <a href="mailto:contact@obdura.com">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

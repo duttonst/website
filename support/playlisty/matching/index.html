@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controlling how Playlisty matches tracks — Playlisty Support</title>
+  <meta name="description" content="Controlling how Playlisty matches tracks — Playlisty Support">
+  <link rel="canonical" href="https://obdura.com/support/playlisty/matching/">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="brand-icons" aria-hidden="true">
+          <img src="../assets/playlisty-apple-music.png" alt="">
+          <img src="../assets/playlisty-spotify.png" alt="">
+        </span>
+        <span>Playlisty <span>Support</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../../../home/">Home</a>
+        <a href="../../../pfam/">For Apple Music</a>
+        <a href="../../../pfs/">For Spotify</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="article-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../">Support</a><span aria-hidden="true">/</span><span>Matching</span>
+        </nav>
+        <span class="article-category">Matching</span>
+        <h1>Controlling how Playlisty matches tracks</h1>
+      </div>
+    </section>
+    <div class="wrap article-layout">
+      <article class="article-content">
+<p class="wp-block-paragraph">Whenever you import a playlist, Playlisty uses sophisticated heuristics to find the optimum equivalent track in Apple Music. Usually this results in a perfect match, but it’s not uncommon for Playlisty to find several Apple Music tracks which exactly match from an audio perspective but which have different cover art and were released differently e.g. as a single (released in Spatial Audio), an album, a “best of” album and even a compilation album.</p>
+<p class="wp-block-paragraph">Which of those versions you’d like Playlisty to choose will depend on your priorities, and starting with Playlisty v3.2 you can now configure how you’d like Playlisty to choose between different versions of tracks.</p>
+<p class="wp-block-paragraph">This section is intended to provide some recommended settings based on common priorities, assuming you are using Spotify as a source. You’ll find the new options in the “Matching + Saving” section of Settings.</p>
+<p class="wp-block-paragraph">And remember: Playlisty will <em>never</em> deliberately pick a “compilation” version of a track unless it’s the only version available or unless Apple Music’s metadata is inaccurate (which happens more often than we’d like!).</p>
+<h3 class="wp-block-heading">Priority: “I want my Apple Music Playlist to be EXACTLY the same as my Spotify playlist”</h3>
+<p class="wp-block-paragraph">If you spent ages getting your artwork just right on Spotify and want to keep it that way then these settings are for you. <a href="../about-artwork/">Click here</a> to learn more about how Playlisty handles artwork. Also bear in mind that the exact track isn’t always available:</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td class="has-text-align-left" data-align="left"><strong>Use Album Details</strong></td><td>Yes</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>When matching</strong></td><td>Prefer Singles</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>Explanation</strong></td><td>Slavishly tries to copy what’s on Spotify but switches-off any further “album optimisation”, leaving Playlisty free to pick the best tracks for anything which didn’t match.</td></tr></tbody></table></figure>
+<h3 class="wp-block-heading">Priority: “I want the best possible audio quality on Apple Music”</h3>
+<p class="wp-block-paragraph">If you want to upgrade your Spotify tracks to the best audio quality that Apple Music has to offer then we recommend the following:</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td class="has-text-align-left" data-align="left"><strong>Use Album Details</strong></td><td>No</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>When matching</strong></td><td>Prefer Dolby Atmos/Hi Res (delete as appropriate)</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>Explanation</strong></td><td>Leaves Playlisty free to pick the best audio quality in all situations. Note that Playlisty will also favour Apple Digital Master tracks with these settings.</td></tr></tbody></table></figure>
+<h3 class="wp-block-heading">Priority: “I want to keep my play stats as clean as possible”</h3>
+<p class="wp-block-paragraph">If you like to keep your play counts against the same instance of each track you’ll want Playlisty to pick the most ubiquitous version available (usually the album version) when importing. We’d recommend:</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td class="has-text-align-left" data-align="left"><strong>Use Album Details</strong></td><td>No</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>When matching</strong></td><td>Prefer Albums</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>Explanation</strong></td><td>Steers Playlisty towards picking the original artist album version of each track, regardless of what was on Spotify, as this is usually the most widely used version.</td></tr></tbody></table></figure>
+<h3 class="wp-block-heading">Priority: “I’m generally Ok with my Spotify playlists but clean them up a bit where possible”</h3>
+<p class="wp-block-paragraph">This is our default setting and is a good overall compromise. It mostly gives you what you have on Spotify, but will tidy-up your playlist by “consolidating” where possible e.g if on Spotify you picked a couple of tracks by the same artist from a compilation album, but Playlisty sees that both those tracks are available from the same original-artist album, it will “upgrade” the tracks to the original artist versions:</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td class="has-text-align-left" data-align="left"><strong>Use Album Details</strong></td><td>Yes</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>When matching</strong></td><td>Prefer Albums</td></tr><tr><td class="has-text-align-left" data-align="left"><strong>Explanation</strong></td><td>Generally gives you an accurate copy of your Spotify playlist but if you have a scattering of compilation tracks which are available from original artist albums then Playlisty will attempt to upgrade them.</td></tr></tbody></table></figure>
+<h2 class="wp-block-heading" id="deepsearch">About Deep Search</h2>
+<p class="wp-block-paragraph">Deep search is a feature introduced in Playlisty 3.6 to enable additional depth to your track searches in certain circumstances. You can switch it on or off from the “Matching &amp; Playback” section in settings. It’s OFF by default, although when you tap on a track to see potential matches Playlisty will always perform a Deep Search so that you can see every possible option.</p>
+<p class="wp-block-paragraph"><strong>How does it work?</strong> When Playlisty searches for tracks it will normally keep searching until it finds a perfect match for the track you are looking for, including artwork &amp; audio quality, and then stop searching. But with Deep Search switched-on it will carry on searching <em>even when it’s already found a perfect match</em>. It will search until pretty much every possibility has been exhausted in the hope that an even better “perfect” match is out there.</p>
+<p class="wp-block-paragraph"><strong>When would this be useful?</strong> For most tracks – especially recent tracks – enabling Deep Search will make no difference to the results of matching which is why we don’t enable it by default. However if you have tracks which have appeared on lots &amp; lots of compilation albums (e.g. mainstream tracks from the 1980’s) enabling Deep Search will sometimes result in better quality artwork than the standard search. If artwork is important to you and you are disappointed with some matches using the normal search then we’d recommend giving Deep Search a try.</p>
+<p class="wp-block-paragraph"><strong>When should I <em>not</em> use it?</strong> Using Deep Search can be <em>significantly</em> slower than performing a normal search. More importantly it can use <em>much</em> more memory, meaning that smaller devices (e.g. iPhones) may close Playlisty down before matching is complete on larger playlists. If you are using an iPhone and Playlisty appears to crash before a large playlist has finished matching then ensure that Deep Search is switched-off.</p>
+      </article>
+      <aside class="article-aside">
+        <div class="aside-card">
+          <h2>More in Matching</h2>
+          <a class="aside-link" href="../rag-matches/"><span>What do those red, amber, green &amp; blue buttons mean?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../tracks-failing-to-match/"><span>Lots of my tracks are failing to match</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../youtube-support/"><span>You say you support YouTube. I just tried it on my YouTube Music account and lots is missing!</span><span aria-hidden="true">→</span></a>
+        </div>
+        <div class="aside-card">
+          <h2>Need more help?</h2>
+          <p>Contact us and we’ll help you get things sorted.</p>
+          <a class="button" href="mailto:contact@obdura.com">Contact support</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>&copy; Obdura Ltd</span>
+      <span class="footer-links">
+        <a href="../../../privacy/playlisty-privacy.html">Privacy</a>
+        <a href="../../../terms/playlisty-tnc.html">Terms</a>
+        <a href="mailto:contact@obdura.com">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

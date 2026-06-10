@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I can’t sign-in to my Spotify account — Playlisty Support</title>
+  <meta name="description" content="I can’t sign-in to my Spotify account — Playlisty Support">
+  <link rel="canonical" href="https://obdura.com/support/playlisty/oauth2/">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="brand-icons" aria-hidden="true">
+          <img src="../assets/playlisty-apple-music.png" alt="">
+          <img src="../assets/playlisty-spotify.png" alt="">
+        </span>
+        <span>Playlisty <span>Support</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../../../home/">Home</a>
+        <a href="../../../pfam/">For Apple Music</a>
+        <a href="../../../pfs/">For Spotify</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="article-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../">Support</a><span aria-hidden="true">/</span><span>Installation</span>
+        </nav>
+        <span class="article-category">Installation</span>
+        <h1>I can’t sign-in to my Spotify account</h1>
+      </div>
+    </section>
+    <div class="wrap article-layout">
+      <article class="article-content">
+<p class="wp-block-paragraph">Playlisty uses an industry standard method provided by Apple to connect to your Spotify, YouTube or Deezer accounts. It’s called OAuth 2 and the reason it’s widely used is because of privacy. Specifically, because we use it, there is absolutely no way that Playlisty can see your username or password at any point while you are signing-in to these services.</p>
+<p class="wp-block-paragraph">OAuth 2 on Apple devices uses your default browser to sign-in to the service. This usually works well but it’s true to say that some browsers are more reliable than others and occasionally even the best browsers can get a bit out of step during the OAuth 2 process. Unfortunately this is even more true if you use “Sign-in with Google”, “Sign-in with Facebook” or “Sign-in with Apple”: we have found these methods to be quite hit-and-miss when signing-in with OAuth 2.</p>
+<p class="wp-block-paragraph">Fortunately there are a couple of alternative methods you can use to sign-in if you are having problems with the standard “Link” button. Option 1 is for Spotify only but Option 2 should work with Deezer &amp; YouTube too.</p>
+<h3 class="wp-block-heading">1. Use the “Try another way” button</h3>
+<p class="wp-block-paragraph">When you connect to Spotify in “Playlisty for Spotify” you’ll sometimes notice an extra “Try another way” button underneath the “Link your account” button (see below).</p>
+<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-7387b849 wp-block-group-is-layout-flex">
+<figure class="wp-block-image size-large is-resized"><img alt="" class="wp-image-1323" height="1024" src="../assets/spotify-sign-in.jpeg" style="width:251px;height:auto" width="473"/></figure>
+
+</div>
+<p class="wp-block-paragraph">If you see this button is usually means that Playlisty has detected that you have installed the Spotify app on your device and if you tap it, Playlisty will try to use the Spotify app to sign-in instead of your browser.</p>
+<h3 class="wp-block-heading">2. Sign-in to Spotify in your browser BEFORE installing Playlisty</h3>
+<p class="wp-block-paragraph">This second method works well with Spotify and is also worth trying with YouTube &amp; Deezer:</p>
+<ol class="wp-block-list">
+<li>Close Playlisty altogether.</li>
+<li>Close Safari (or your default browser) altogether and then re-open it.</li>
+<li>Sign-in to Spotify (or YouTube or Deezer) in your browser at <a href="https://open.spotify.com/">https://open.spotify.com</a> (or <a href="https://www.youtube.com">https://www.youtube.com</a> or <a href="https://account.deezer.com">https://account.deezer.com</a>) and make sure everything looks as you would expect e.g. that you are signed-in to the account you expected. Stay signed-in.</li>
+<li>Open Playlisty again, and hit the usual “Link …” button. But <strong>DON’T</strong> sign-in at this point – just close the sign-in window.</li>
+<li>You’ll get the usual error message here from Playlisty. Just hit the “Go back” button.</li>
+<li>Hit the “Link …” button <em>again</em>. Hopefully this time your sign-in will happen automatically and you’ll be prompted to give Playlisty permission to access your library.</li>
+</ol>
+<p class="wp-block-paragraph">The reason this works is that Playlisty uses a slightly different kind of browser “session” the second time you try to connect which will pick up any pre-existing connections you’ve made. No security details get passed to Playlisty though – it all stays securely in your browser.</p>
+      </article>
+      <aside class="article-aside">
+        <div class="aside-card">
+          <h2>More in Installation</h2>
+          <a class="aside-link" href="../pre-requisites-for-playlisty/"><span>What are the pre-requisites for running Playlisty?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../unavailable/"><span>It says that Playlisty Pro isn’t available!</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../sync-mode/"><span>What is “Sync Library” and why do I have to enable it?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../restore-purchase/"><span>I just installed on a new device and tried to restore my purchase. It didn’t work!</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../child-account/"><span>Why doesn’t Playlisty work on a child’s account &amp; how can I work around this?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../what-spotify-permissions-does-playlisty-need/"><span>What Spotify permissions does Playlisty need?</span><span aria-hidden="true">→</span></a>
+        </div>
+        <div class="aside-card">
+          <h2>Need more help?</h2>
+          <p>Contact us and we’ll help you get things sorted.</p>
+          <a class="button" href="mailto:contact@obdura.com">Contact support</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>&copy; Obdura Ltd</span>
+      <span class="footer-links">
+        <a href="../../../privacy/playlisty-privacy.html">Privacy</a>
+        <a href="../../../terms/playlisty-tnc.html">Terms</a>
+        <a href="mailto:contact@obdura.com">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

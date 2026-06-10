@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can I import a list of albums? — Playlisty Support</title>
+  <meta name="description" content="Can I import a list of albums? — Playlisty Support">
+  <link rel="canonical" href="https://obdura.com/support/playlisty/albums/">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="brand-icons" aria-hidden="true">
+          <img src="../assets/playlisty-apple-music.png" alt="">
+          <img src="../assets/playlisty-spotify.png" alt="">
+        </span>
+        <span>Playlisty <span>Support</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../../../home/">Home</a>
+        <a href="../../../pfam/">For Apple Music</a>
+        <a href="../../../pfs/">For Spotify</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="article-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../">Support</a><span aria-hidden="true">/</span><span>Advanced</span>
+        </nav>
+        <span class="article-category">Advanced</span>
+        <h1>Can I import a list of albums?</h1>
+      </div>
+    </section>
+    <div class="wrap article-layout">
+      <article class="article-content">
+<p class="wp-block-paragraph">Album mode is one of Playlisty’s more advanced features. In summary, if you give Playlisty a list of albums, it can explode the albums into individual tracks before saving them to your library.</p>
+<p class="wp-block-paragraph">Sometimes Playlisty will use album mode automatically, behind the scenes. For example, if you select the “Spotify Liked Albums” playlist from your Spotify library and transfer that to a playlist in your Apple Music library, Playlisty will know that in Apple Music playlists cannot contain albums and it will therefore explode all those albums into tracks for you automatically. Note: if you select your library as the destination, rather than a playlist, Playlisty is able to add the albums as albums rather than tracks.</p>
+<p class="wp-block-paragraph">But sometimes it’s handy to be able to invoke this functionality yourself, and this section describes 3 ways you can get Playlisty to treat a list as a list of albums not individual tracks.</p>
+<ol class="wp-block-list">
+<li><strong>Include “.albums” in the filename</strong>. If your list is in a file and you import it from the “Files” tab, Playlisty will automatically use album mode if the filename contains “.albums” e.g. “favourites.albums.csv”.</li>
+<li><strong>Switch it to albums mode in the Files tab</strong>. If you add a file containing albums to the Files tab and long-press on it (right-click on a Mac) you will see an option to “Import as albums”. Select this.</li>
+<li><strong>Include the query parameter “playlisty_query_type=albums” on the URL</strong>. This option can be used here you are pasting a URL to a web-page into the Scratchpad. For example pasting the URL “https://en.wikipedia.org/wiki/Billboard_200?playlisty_query_type=albums” will enable Playlisty to correctly process the list of albums contained on that page (the first table).</li>
+</ol>
+      </article>
+      <aside class="article-aside">
+        <div class="aside-card">
+          <h2>More in Advanced</h2>
+          <a class="aside-link" href="../siri-shortcuts/"><span>How do I use Playlisty with Siri Shortcuts?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../from-apple-music/"><span>How to use Playlisty to import FROM your Music library TO your Music library</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../replace-mode/"><span>About Playlisty “Replace Mode”</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../scratchpad-formats/"><span>What formats does the Playlisty Scratchpad understand?</span><span aria-hidden="true">→</span></a>
+          <a class="aside-link" href="../file-formats/"><span>What file formats can Playlisty read?</span><span aria-hidden="true">→</span></a>
+        </div>
+        <div class="aside-card">
+          <h2>Need more help?</h2>
+          <p>Contact us and we’ll help you get things sorted.</p>
+          <a class="button" href="mailto:contact@obdura.com">Contact support</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>&copy; Obdura Ltd</span>
+      <span class="footer-links">
+        <a href="../../../privacy/playlisty-privacy.html">Privacy</a>
+        <a href="../../../terms/playlisty-tnc.html">Terms</a>
+        <a href="mailto:contact@obdura.com">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playlisty Support — Frequently Asked Questions</title>
+  <meta name="description" content="Playlisty Support — Frequently Asked Questions">
+  <link rel="canonical" href="https://obdura.com/support/playlisty/">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <span class="brand-icons" aria-hidden="true">
+          <img src="assets/playlisty-apple-music.png" alt="">
+          <img src="assets/playlisty-spotify.png" alt="">
+        </span>
+        <span>Playlisty <span>Support</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../../home/">Home</a>
+        <a href="../../pfam/">For Apple Music</a>
+        <a href="../../pfs/">For Spotify</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Playlisty help centre</p>
+          <h1>Find your <span>answer.</span></h1>
+          <p class="lead">Guides and answers for Playlisty for Apple Music and Playlisty for Spotify.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="floating-icon apple" src="assets/playlisty-apple-music.png" alt="">
+          <img class="floating-icon spotify" src="assets/playlisty-spotify.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="wrap">
+        <div class="search-panel">
+          <label class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+            <span class="screen-reader-text" hidden>Search the FAQ</span>
+            <input id="faq-search" type="search" placeholder="Search the FAQ" autocomplete="off">
+          </label>
+          <div class="filters" id="faq-filters" aria-label="Filter FAQ by category">
+            <button class="filter active" type="button" data-category="all">All</button>
+            <button class="filter" type="button" data-category="general">General information</button>
+            <button class="filter" type="button" data-category="installation">Installation</button>
+            <button class="filter" type="button" data-category="sharing">Sharing</button>
+            <button class="filter" type="button" data-category="matching">Matching</button>
+            <button class="filter" type="button" data-category="saving">Saving</button>
+            <button class="filter" type="button" data-category="advanced">Advanced</button>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <h2>Frequently asked questions</h2>
+          <p class="result-count" id="result-count" aria-live="polite"></p>
+        </div>
+        <div class="faq-grid" id="faq-grid"></div>
+        <div class="empty-state" id="empty-state">No answers matched your search.</div>
+      </div>
+    </section>
+
+    <section class="support-band">
+      <div class="wrap support-card">
+        <div>
+          <h2>Still need a hand?</h2>
+          <p>Get in touch and we’ll help you get back to your music.</p>
+        </div>
+        <a class="button" href="mailto:contact@obdura.com">Contact support</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>&copy; Obdura Ltd</span>
+      <span class="footer-links">
+        <a href="../../privacy/playlisty-privacy.html">Privacy</a>
+        <a href="../../terms/playlisty-tnc.html">Terms</a>
+        <a href="mailto:contact@obdura.com">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <script>
+    // To add an FAQ card, add one object to this list and create its matching folder/page.
+    const FAQ_ITEMS = [
+      {"title": "Playlisty 101: How do I import a playlist using Playlisty?", "category": "general", "categoryLabel": "General information", "href": "101/"},
+      {"title": "What does Playlisty “Pro” include?", "category": "general", "categoryLabel": "General information", "href": "pro-features/"},
+      {"title": "Does Playlisty support Apple’s “Family Sharing”?", "category": "general", "categoryLabel": "General information", "href": "family-sharing/"},
+      {"title": "How do I cancel my Playlisty Pro subscription?", "category": "general", "categoryLabel": "General information", "href": "how-do-i-cancel-my-playlisty-pro-subscription/"},
+      {"title": "About artwork", "category": "general", "categoryLabel": "General information", "href": "about-artwork/"},
+      {"title": "How can I keep the order when importing Spotify “Liked Songs” to Apple Music “Songs”?", "category": "general", "categoryLabel": "General information", "href": "songs-order/"},
+      {"title": "I quit Apple Music and have now lost all of my “Loved” tracks. Is there any way I can get them back?", "category": "general", "categoryLabel": "General information", "href": "apple-music-loved-tracks/"},
+      {"title": "I can’t sign-in to my Spotify account", "category": "installation", "categoryLabel": "Installation", "href": "oauth2/"},
+      {"title": "What are the pre-requisites for running Playlisty?", "category": "installation", "categoryLabel": "Installation", "href": "pre-requisites-for-playlisty/"},
+      {"title": "It says that Playlisty Pro isn’t available!", "category": "installation", "categoryLabel": "Installation", "href": "unavailable/"},
+      {"title": "What is “Sync Library” and why do I have to enable it?", "category": "installation", "categoryLabel": "Installation", "href": "sync-mode/"},
+      {"title": "I just installed on a new device and tried to restore my purchase. It didn’t work!", "category": "installation", "categoryLabel": "Installation", "href": "restore-purchase/"},
+      {"title": "Why doesn’t Playlisty work on a child’s account & how can I work around this?", "category": "installation", "categoryLabel": "Installation", "href": "child-account/"},
+      {"title": "What Spotify permissions does Playlisty need?", "category": "installation", "categoryLabel": "Installation", "href": "what-spotify-permissions-does-playlisty-need/"},
+      {"title": "How do I “Share” a playlist from another app such as Safari?", "category": "sharing", "categoryLabel": "Sharing", "href": "share-a-playlist/"},
+      {"title": "I tried importing a Podcast/Web-page and it didn’t work…", "category": "sharing", "categoryLabel": "Sharing", "href": "sharing-a-podcast-web-page/"},
+      {"title": "I’ve hit the “Share” button but Playlisty isn’t there…", "category": "sharing", "categoryLabel": "Sharing", "href": "playlisty-not-there-to-share/"},
+      {"title": "I’ve selected the Playlisty “Share” icon but I’m not getting a playlist. I’m getting nothing/garbage instead…", "category": "sharing", "categoryLabel": "Sharing", "href": "getting-nothing-garbage/"},
+      {"title": "What do those red, amber, green & blue buttons mean?", "category": "matching", "categoryLabel": "Matching", "href": "rag-matches/"},
+      {"title": "Lots of my tracks are failing to match", "category": "matching", "categoryLabel": "Matching", "href": "tracks-failing-to-match/"},
+      {"title": "You say you support YouTube. I just tried it on my YouTube Music account and lots is missing!", "category": "matching", "categoryLabel": "Matching", "href": "youtube-support/"},
+      {"title": "Controlling how Playlisty matches tracks", "category": "matching", "categoryLabel": "Matching", "href": "matching/"},
+      {"title": "Playlisty says it’s finished saving to Apple Music but some tracks or playlists are missing", "category": "saving", "categoryLabel": "Saving", "href": "sync/"},
+      {"title": "How does the “Add to existing playlist” function work?", "category": "saving", "categoryLabel": "Saving", "href": "sync-function/"},
+      {"title": "What’s the difference between “Save to library” and “Save to playlist”?", "category": "saving", "categoryLabel": "Saving", "href": "save-to-library-or-playlist/"},
+      {"title": "What’s the difference between “Save to new playlists” and “Save to your library ‘as is’”?", "category": "saving", "categoryLabel": "Saving", "href": "save-to-new-playlists/"},
+      {"title": "Why is Playlisty telling me my Apple Music playlist is read-only?", "category": "saving", "categoryLabel": "Saving", "href": "read-only/"},
+      {"title": "How can I use Playlisty to backup my Apple Music playlists?", "category": "saving", "categoryLabel": "Saving", "href": "playlist-archive/"},
+      {"title": "Can I import a list of albums?", "category": "advanced", "categoryLabel": "Advanced", "href": "albums/"},
+      {"title": "How do I use Playlisty with Siri Shortcuts?", "category": "advanced", "categoryLabel": "Advanced", "href": "siri-shortcuts/"},
+      {"title": "How to use Playlisty to import FROM your Music library TO your Music library", "category": "advanced", "categoryLabel": "Advanced", "href": "from-apple-music/"},
+      {"title": "About Playlisty “Replace Mode”", "category": "advanced", "categoryLabel": "Advanced", "href": "replace-mode/"},
+      {"title": "What formats does the Playlisty Scratchpad understand?", "category": "advanced", "categoryLabel": "Advanced", "href": "scratchpad-formats/"},
+      {"title": "What file formats can Playlisty read?", "category": "advanced", "categoryLabel": "Advanced", "href": "file-formats/"},
+    ];
+
+    const accents = {
+      general: ["#ff6685", "rgba(255,45,85,.22)"],
+      installation: ["#5ac8fa", "rgba(90,200,250,.2)"],
+      sharing: ["#bf8cff", "rgba(191,140,255,.2)"],
+      matching: ["#ffb340", "rgba(255,179,64,.2)"],
+      saving: ["#1ed760", "rgba(30,215,96,.2)"],
+      advanced: ["#64d2ff", "rgba(100,210,255,.2)"]
+    };
+
+    const grid = document.querySelector("#faq-grid");
+    const search = document.querySelector("#faq-search");
+    const count = document.querySelector("#result-count");
+    const empty = document.querySelector("#empty-state");
+    const filters = [...document.querySelectorAll(".filter")];
+    let activeCategory = "all";
+
+    function render() {
+      const query = search.value.trim().toLocaleLowerCase();
+      const visible = FAQ_ITEMS.filter((item) => {
+        const categoryMatches = activeCategory === "all" || item.category === activeCategory;
+        return categoryMatches && item.title.toLocaleLowerCase().includes(query);
+      });
+
+      grid.innerHTML = visible.map((item) => {
+        const [accent, glow] = accents[item.category];
+        return `<a class="faq-card" href="${item.href}" style="--accent:${accent};--card-glow:${glow}">
+          <span class="category">${item.categoryLabel}</span>
+          <h3>${item.title}</h3>
+          <span class="read-more">Read answer <span aria-hidden="true">→</span></span>
+        </a>`;
+      }).join("");
+
+      count.textContent = `${visible.length} ${visible.length === 1 ? "answer" : "answers"}`;
+      empty.style.display = visible.length ? "none" : "block";
+    }
+
+    search.addEventListener("input", render);
+    filters.forEach((button) => button.addEventListener("click", () => {
+      activeCategory = button.dataset.category;
+      filters.forEach((item) => item.classList.toggle("active", item === button));
+      render();
+    }));
+    render();
+  </script>
+</body>
+</html>
