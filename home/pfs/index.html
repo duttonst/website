@@ -1,605 +1,631 @@
 <!doctype html>
-  <html lang="en">
+<html lang="en">
 
-  <head>
-    <meta name="apple-itunes-app" content="app-id=6478105775" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Playlisty for Spotify — Bring your music to Spotify</title>
-    <link rel="canonical" href="https://obdura.com/pfs"/>
-    <meta name="description"
-      content="Move playlists, artwork and favourites from Apple Music and other services to Spotify with accurate matching and full control before saving." />
-    <style>
-      :root {
-        --bg: #07120c;
-        --bg2: #0b2416;
-        --green: #1db954;
-        --green2: #4be27a;
-        --ink: #f6fff9;
-        --muted: #b7c8bd;
-        --card: rgba(255, 255, 255, .075);
-        --line: rgba(255, 255, 255, .13);
+<head>
+  <meta name="apple-itunes-app" content="app-id=6478105775" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playlisty for Spotify — Bring your music to Spotify</title>
+  <link rel="canonical" href="https://obdura.com/pfs" />
+  <meta name="description"
+    content="Move playlists, artwork and favourites from Apple Music and other services to Spotify with accurate matching and full control before saving." />
+  <style>
+    :root {
+      --bg: #07120c;
+      --bg2: #0b2416;
+      --green: #1db954;
+      --green2: #4be27a;
+      --ink: #f6fff9;
+      --muted: #b7c8bd;
+      --card: rgba(255, 255, 255, .075);
+      --line: rgba(255, 255, 255, .13);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 80% 0%, rgba(29, 185, 84, .28), transparent 36%), radial-gradient(circle at 10% 18%, rgba(29, 185, 84, .14), transparent 30%), linear-gradient(180deg, #040806 0%, var(--bg) 42%, #020403 100%);
+      line-height: 1.5
+    }
+
+    .wrap {
+      width: min(1180px, 92vw);
+      margin: auto
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(4, 8, 6, .7);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 850;
+      font-size: 1.35rem;
+      letter-spacing: -.04em;
+      text-decoration: none
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      display: grid;
+      place-items: center;
+      color: #041006;
+      font-size: 1.45rem
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center
+    }
+
+    .nav-actions a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem
+    }
+
+    .nav-actions a:hover,
+    .nav-actions a:focus-visible {
+      color: var(--ink)
+    }
+
+    .store {
+      background: var(--green);
+      color: #031006 !important;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 18px 50px rgba(29, 185, 84, .25)
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .hero {
+      min-height: calc(100vh - 82px);
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 52px;
+      align-items: center;
+      padding: 46px 0 92px
+    }
+
+    .eyebrow {
+      color: var(--green2);
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      margin-bottom: 18px
+    }
+
+    h1 {
+      font-size: clamp(3.6rem, 8vw, 7.4rem);
+      line-height: .9;
+      letter-spacing: -.075em;
+      margin: 0 0 28px
+    }
+
+    .lead {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 0 34px
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .secondary {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 850;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 13px 18px;
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .fine {
+      display: block;
+      color: var(--muted);
+      margin-top: 14px
+    }
+
+    .hero-shots {
+      position: relative;
+      min-height: 640px
+    }
+
+    .shot {
+      position: absolute;
+      width: 285px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: transparent
+    }
+
+    .shot img {
+      width: 100%;
+      display: block
+    }
+
+    .shot.one {
+      left: 26%;
+      top: 0;
+      width: 330px;
+      z-index: 3
+    }
+
+    .shot.two {
+      left: 0;
+      top: 130px;
+      transform: rotate(-6deg);
+      z-index: 2
+    }
+
+    .shot.three {
+      right: 0;
+      top: 120px;
+      transform: rotate(5deg);
+      z-index: 1
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #05220f;
+      background: var(--green2);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 22px
+    }
+
+    section {
+      padding: 94px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .section-title {
+      font-size: clamp(2.3rem, 5vw, 4.8rem);
+      line-height: .98;
+      letter-spacing: -.06em;
+      margin: 0 0 22px;
+      max-width: 850px
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 1.25rem;
+      max-width: 760px;
+      margin: 0 0 50px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 18px
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      margin: 90px 0
+    }
+
+    .feature:nth-child(even) .copy {
+      order: 2
+    }
+
+    .feature h3 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin: 0 0 18px
+    }
+
+    .feature p {
+      font-size: 1.22rem;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .phone {
+      width: min(360px, 100%);
+      margin: auto;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .42);
+      background: transparent
+    }
+
+    .phone img {
+      width: 100%;
+      display: block
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px
+    }
+
+    .step {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px
+    }
+
+    .num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      color: #031006;
+      font-weight: 950;
+      margin-bottom: 18px
+    }
+
+    .quote {
+      background: linear-gradient(135deg, rgba(29, 185, 84, .22), rgba(255, 255, 255, .07));
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      padding: 56px;
+      text-align: center
+    }
+
+    .quote p {
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.2;
+      letter-spacing: -.03em;
+      margin: 0 auto 28px;
+      max-width: 850px
+    }
+
+    .footer {
+      padding: 36px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line)
+    }
+
+    .footer a {
+      color: var(--green2);
+    }
+
+    @media (max-width:900px) {
+      .nav-actions .nav-secondary {
+        display: none
       }
 
-      * {
-        box-sizing: border-box
-      }
-
-      html {
-        scroll-behavior: smooth
-      }
-
-      body {
-        margin: 0;
-        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: var(--ink);
-        background: radial-gradient(circle at 80% 0%, rgba(29, 185, 84, .28), transparent 36%), radial-gradient(circle at 10% 18%, rgba(29, 185, 84, .14), transparent 30%), linear-gradient(180deg, #040806 0%, var(--bg) 42%, #020403 100%);
-        line-height: 1.5
-      }
-
-      .wrap {
-        width: min(1180px, 92vw);
-        margin: auto
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        padding: 26px 0;
-        border-bottom: 1px solid var(--line);
-        background: rgba(4, 8, 6, .7);
-        backdrop-filter: blur(18px);
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--ink);
-        font-weight: 850;
-        font-size: 1.35rem;
-        letter-spacing: -.04em;
-        text-decoration: none
-      }
-
-      .mark {
-        width: 42px;
-        height: 42px;
-        border-radius: 13px;
-        background: linear-gradient(135deg, var(--green), var(--green2));
-        display: grid;
-        place-items: center;
-        color: #041006;
-        font-size: 1.45rem
-      }
-
-      .nav-actions {
-        display: flex;
-        gap: 18px;
-        align-items: center
-      }
-
-      .nav-actions a {
-        color: var(--muted);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: .95rem
-      }
-
-      .nav-actions a:hover,
-      .nav-actions a:focus-visible {
-        color: var(--ink)
-      }
-
-      .store {
-        background: var(--green);
-        color: #031006 !important;
-        padding: 13px 18px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 900;
-        box-shadow: 0 18px 50px rgba(29, 185, 84, .25)
-      }
-
-      .product-icon {
-        width: 59px;
-        height: 59px;
-        border-radius: 13px;
-        box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
-      }
-
-      .hero {
-        min-height: calc(100vh - 82px);
-        display: grid;
-        grid-template-columns: .9fr 1.1fr;
-        gap: 52px;
-        align-items: center;
-        padding: 46px 0 92px
-      }
-
-      .eyebrow {
-        color: var(--green2);
-        font-weight: 900;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        font-size: .78rem;
-        margin-bottom: 18px
-      }
-
-      h1 {
-        font-size: clamp(3.6rem, 8vw, 7.4rem);
-        line-height: .9;
-        letter-spacing: -.075em;
-        margin: 0 0 28px
-      }
-
-      .lead {
-        font-size: clamp(1.2rem, 2vw, 1.55rem);
-        color: var(--muted);
-        max-width: 650px;
-        margin: 0 0 34px
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        align-items: center
-      }
-
-      .secondary {
-        color: var(--ink);
-        text-decoration: none;
-        font-weight: 850;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 13px 18px;
-        background: rgba(255, 255, 255, .06)
-      }
-
-      .fine {
-        display: block;
-        color: var(--muted);
-        margin-top: 14px
+      .hero,
+      .feature {
+        grid-template-columns: 1fr
       }
 
       .hero-shots {
-        position: relative;
-        min-height: 640px
+        min-height: auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr
       }
 
-      .shot {
-        position: absolute;
-        width: 285px;
-        border-radius: 30px;
-        overflow: hidden;
-        background: transparent
-      }
-
-      .shot img {
-        width: 100%;
-        display: block
-      }
-
-      .shot.one {
-        left: 26%;
-        top: 0;
-        width: 330px;
-        z-index: 3
-      }
-
-      .shot.two {
-        left: 0;
-        top: 130px;
-        transform: rotate(-6deg);
-        z-index: 2
-      }
-
+      .shot,
+      .shot.one,
+      .shot.two,
       .shot.three {
-        right: 0;
-        top: 120px;
-        transform: rotate(5deg);
-        z-index: 1
+        position: static;
+        transform: none;
+        width: min(360px, 86vw);
+        margin: auto
       }
 
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: #05220f;
-        background: var(--green2);
-        padding: 9px 13px;
-        border-radius: 999px;
-        font-weight: 900;
-        margin-bottom: 22px
-      }
-
-      section {
-        padding: 94px 0;
-        border-top: 1px solid var(--line)
-      }
-
-      .section-title {
-        font-size: clamp(2.3rem, 5vw, 4.8rem);
-        line-height: .98;
-        letter-spacing: -.06em;
-        margin: 0 0 22px;
-        max-width: 850px
-      }
-
-      .intro {
-        color: var(--muted);
-        font-size: 1.25rem;
-        max-width: 760px;
-        margin: 0 0 50px
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 26px
-      }
-
-      .icon {
-        font-size: 2rem;
-        margin-bottom: 18px
-      }
-
-      .card h3 {
-        margin: 0 0 10px;
-        font-size: 1.3rem
-      }
-
-      .card p {
-        margin: 0;
-        color: var(--muted)
-      }
-
-      .feature {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-        margin: 90px 0
+      .grid,
+      .steps {
+        grid-template-columns: 1fr
       }
 
       .feature:nth-child(even) .copy {
-        order: 2
-      }
-
-      .feature h3 {
-        font-size: clamp(2rem, 4vw, 4rem);
-        line-height: 1;
-        letter-spacing: -.055em;
-        margin: 0 0 18px
-      }
-
-      .feature p {
-        font-size: 1.22rem;
-        color: var(--muted);
-        margin: 0
-      }
-
-      .phone {
-        width: min(360px, 100%);
-        margin: auto;
-        border-radius: 3px;
-        overflow: hidden;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, .42);
-        background: transparent
-      }
-
-      .phone img {
-        width: 100%;
-        display: block
-      }
-
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 16px
-      }
-
-      .step {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 24px
-      }
-
-      .num {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: var(--green);
-        display: grid;
-        place-items: center;
-        color: #031006;
-        font-weight: 950;
-        margin-bottom: 18px
+        order: 0
       }
 
       .quote {
-        background: linear-gradient(135deg, rgba(29, 185, 84, .22), rgba(255, 255, 255, .07));
-        border: 1px solid var(--line);
-        border-radius: 36px;
-        padding: 56px;
-        text-align: center
+        padding: 34px 22px
       }
 
-      .quote p {
-        font-size: clamp(1.5rem, 3vw, 2.4rem);
-        line-height: 1.2;
-        letter-spacing: -.03em;
-        margin: 0 auto 28px;
-        max-width: 850px
+      h1 {
+        font-size: clamp(3rem, 14vw, 5rem)
+      }
+    }
+
+    @media (max-width:620px) {
+      header {
+        padding: 12px 0
       }
 
-      .footer {
-        padding: 36px 0;
-        color: var(--muted);
-        border-top: 1px solid var(--line)
+      .brand>span {
+        display: none
       }
 
-      .footer a {
-        color: var(--green2);
+      .product-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 11px
       }
 
-      @media (max-width:900px) {
-        .nav-actions .nav-secondary {
-          display: none
-        }
-
-        .hero,
-        .feature {
-          grid-template-columns: 1fr
-        }
-
-        .hero-shots {
-          min-height: auto;
-          display: grid;
-          gap: 20px;
-          grid-template-columns: 1fr
-        }
-
-        .shot,
-        .shot.one,
-        .shot.two,
-        .shot.three {
-          position: static;
-          transform: none;
-          width: min(360px, 86vw);
-          margin: auto
-        }
-
-        .grid,
-        .steps {
-          grid-template-columns: 1fr
-        }
-
-        .feature:nth-child(even) .copy {
-          order: 0
-        }
-
-        .quote {
-          padding: 34px 22px
-        }
-
-        h1 {
-          font-size: clamp(3rem, 14vw, 5rem)
-        }
+      .nav-actions {
+        gap: 14px
       }
 
-      @media (max-width:620px) {
-        header {
-          padding: 12px 0
-        }
-
-        .brand > span {
-          display: none
-        }
-
-        .product-icon {
-          width: 46px;
-          height: 46px;
-          border-radius: 11px
-        }
-
-        .nav-actions {
-          gap: 14px
-        }
-
-        .nav-actions a {
-          font-size: .88rem
-        }
+      .nav-actions a {
+        font-size: .88rem
       }
+    }
+  </style>
+</head>
 
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="wrap nav">
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": "Playlisty for Spotify",
-          "image": "https://www.obdura.com/home/assets/PfS.png",
-          "description": "Transfer playlists to Spotify in seconds from hundreds of different sources, including Apple Music, YouTube, Deezer, websites & files",
-          "brand": {
-            "@type": "Brand",
-            "name": "Playlisty"
+<body>
+  <header>
+    <div class="wrap nav">
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Playlisty for Spotify",
+        "description": "Transfer playlists to Spotify in seconds from hundreds of different sources, including Apple Music, YouTube, Deezer, websites & files",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "iOS",
+        "url": "https://www.obdura.com/home/pfs/",
+        "author": {
+          "@type": "Organization",
+          "name": "Obdura Ltd",
+          "url": "https://www.obdura.com"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": 3.99,
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "downloadUrl": "https://apps.apple.com/us/app/playlisty-for-spotify/id6478105775",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": 4.7,
+          "ratingCount": 176
+        },
+        "screenshot": [
+          {
+            "@type": "ImageObject",
+            "url": "https://www.obdura.com/home/assets/pfs-sources.png"
           }
-        }
-        </script>
-        <a class="brand" href="../pfs/"><img class="product-icon" src="../assets/PfS.png"
+        ],
+        "isFamilyFriendly": true
+      }
+      </script>
+      <a class="brand" href="../pfs/"><img class="product-icon" src="../assets/PfS.png"
           alt="Playlisty for Spotify icon" /><span>Playlisty <span style="color:var(--green2)">for Spotify</span></span>
-        </a>
-        <nav class="nav-actions">
-          <a class="nav-secondary" href="../">Home</a>
-          <a class="nav-secondary" href="#features">Features</a>
-          <a href="../pfam/">For Apple Music</a>
-          <a href="../support/playlisty/">Support</a>
-          <a class="nav-secondary" href="#download">Download</a>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <section class="wrap hero">
-        <div>
-          <div class="badge">For switchers to Spotify</div>
-          <h1>Bring your music to Spotify.</h1>
-          <p class="lead">Move playlists, playlist artwork and favourites from Apple Music and other services to Spotify
-            — with careful matching, previewing and editing before you save.</p>
-          <div class="hero-actions"><a class="store" href="#download">Download on the App Store</a><a class="secondary"
-              href="#how">See how it works</a></div><span class="fine">No starting again. No mystery gaps. No “close
-            enough” playlists.</span>
-        </div>
-        <div class="hero-shots" aria-label="Playlisty app screenshots">
-          <div class="shot two"><img src="../assets/scratchpad.png" alt="Playlisty Scratchpad import screen"></div>
-          <div class="shot one"><img src="../assets/pfs-matches.png" alt="Playlisty finding best playlist matches"></div>
-          <div class="shot three"><img src="../assets/review.png" alt="Playlisty playlist preview and matching screen">
-          </div>
-        </div>
-      </section>
-      <section id="features">
-        <div class="wrap">
-          <h2 class="section-title">The difference is what happens when matching gets difficult.</h2>
-          <p class="intro">Lots of tools say they transfer playlists. Playlisty is built for the awkward cases: live
-            versions, remasters, regional catalogues, renamed tracks and services that do not quite agree with one
-            another.</p>
-          <div class="grid">
-            <div class="card">
-              <div class="icon">🎯</div>
-              <h3>More accurate matches</h3>
-              <p>Playlisty helps find the right tracks, not just the first vaguely similar result.</p>
-            </div>
-            <div class="card">
-              <div class="icon">🖼️</div>
-              <h3>Playlist artwork too</h3>
-              <p>Bring across the details that make your playlists feel like yours.</p>
-            </div>
-            <div class="card">
-              <div class="icon">❤️</div>
-              <h3>Favourites included</h3>
-              <p>Move songs, albums and artists, not just standard playlists.</p>
-            </div>
-            <div class="card">
-              <div class="icon">✏️</div>
-              <h3>Preview and tweak</h3>
-              <p>Check matches, play tracks and fix anything before saving to Spotify.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="wrap">
-          <div class="feature">
-            <div class="copy">
-              <h3>Import from Apple Music, web pages, files and more.</h3>
-              <p>Use Playlisty’s sources screen to bring in music from services, links, files and the places your
-                playlists actually live.</p>
-            </div>
-            <div class="phone"><img src="../assets/pfs-sources.png" alt="Playlisty playlist sources screen"></div>
-          </div>
-          <div class="feature">
-            <div class="copy">
-              <h3>Browse playlists and favourites before importing.</h3>
-              <p>Select the playlists, loved tracks and albums you want to take with you, instead of dragging everything
-                across blindly.</p>
-            </div>
-            <div class="phone"><img src="../assets/deezer.png" alt="Playlisty source library selection screen"></div>
-          </div>
-          <div class="feature">
-            <div class="copy">
-              <h3>Got text? Paste it into Scratchpad.</h3>
-              <p>Drop in a list of songs, a web link, a copied chart or a messy block of text and let Playlisty turn it
-                into something Spotify can use.</p>
-            </div>
-            <div class="phone"><img src="../assets/scratchpad.png" alt="Playlisty Scratchpad screen"></div>
-          </div>
-          <div class="feature">
-            <div class="copy">
-              <h3>Review, play and tweak before saving.</h3>
-              <p>Preview your playlist, check the match quality, skip anything wrong and keep control right up to the
-                final save.</p>
-            </div>
-            <div class="phone"><img src="../assets/review.png" alt="Playlisty review and preview screen"></div>
-          </div>
-          <div class="feature">
-            <div class="copy">
-              <h3>Save your way.</h3>
-              <p>Send everything to a new playlist, an existing playlist, or even a Siri Shortcut when you want the
-                process automated.</p>
-            </div>
-            <div class="phone"><img src="../assets/save.png" alt="Playlisty save to Spotify screen"></div>
-          </div>
-        </div>
-      </section>
-      <section id="how">
-        <div class="wrap">
-          <h2 class="section-title">How it works</h2>
-          <div class="steps">
-            <div class="step">
-              <div class="num">1</div>
-              <h3>Pick a source</h3>
-              <p>Apple Music, files, web pages, text, YouTube, Deezer and more.</p>
-            </div>
-            <div class="step">
-              <div class="num">2</div>
-              <h3>Choose music</h3>
-              <p>Select playlists, albums, artists and favourites.</p>
-            </div>
-            <div class="step">
-              <div class="num">3</div>
-              <h3>Match tracks</h3>
-              <p>Playlisty searches Spotify for the best results.</p>
-            </div>
-            <div class="step">
-              <div class="num">4</div>
-              <h3>Check it</h3>
-              <p>Preview, play, tweak or skip before saving.</p>
-            </div>
-            <div class="step">
-              <div class="num">5</div>
-              <h3>Save to Spotify</h3>
-              <p>Create a new playlist or update an existing one.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="download" class="wrap">
-        <div class="quote">
-          <p>Your playlists are part of your life. Playlisty helps make sure they are not left behind when you move to
-            Spotify.</p>
-          <a href="https://apps.apple.com/us/app/playlisty-for-spotify/id6478105775?itscg=30200&itsct=apps_box_badge&mttnsubad=6478105775" style="display: inline-block;">
-          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1713484800" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
-          </a>
-                <span class="fine">Free to start.
-            One-time upgrade available. Requires Spotify.</span>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-    <div class="wrap">
-      <p>© Obdura. Playlisty for Spotify. Read about our <a href="../terms/playlisty-tnc.html">Terms and Conditions</a> and <a href="../privacy/playlisty-privacy.html">Privacy Policy</a> here.</p>
+      </a>
+      <nav class="nav-actions">
+        <a class="nav-secondary" href="../">Home</a>
+        <a class="nav-secondary" href="#features">Features</a>
+        <a href="../pfam/">For Apple Music</a>
+        <a href="../support/playlisty/">Support</a>
+        <a class="nav-secondary" href="#download">Download</a>
+      </nav>
     </div>
-  </body>
+  </header>
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="badge">For switchers to Spotify</div>
+        <h1>Bring your music to Spotify.</h1>
+        <p class="lead">Move playlists, playlist artwork and favourites from Apple Music and other services to Spotify
+          — with careful matching, previewing and editing before you save.</p>
+        <div class="hero-actions"><a class="store" href="#download">Download on the App Store</a><a class="secondary"
+            href="#how">See how it works</a></div><span class="fine">No starting again. No mystery gaps. No “close
+          enough” playlists.</span>
+      </div>
+      <div class="hero-shots" aria-label="Playlisty app screenshots">
+        <div class="shot two"><img src="../assets/scratchpad.png" alt="Playlisty Scratchpad import screen"></div>
+        <div class="shot one"><img src="../assets/pfs-matches.png" alt="Playlisty finding best playlist matches"></div>
+        <div class="shot three"><img src="../assets/review.png" alt="Playlisty playlist preview and matching screen">
+        </div>
+      </div>
+    </section>
+    <section id="features">
+      <div class="wrap">
+        <h2 class="section-title">The difference is what happens when matching gets difficult.</h2>
+        <p class="intro">Lots of tools say they transfer playlists. Playlisty is built for the awkward cases: live
+          versions, remasters, regional catalogues, renamed tracks and services that do not quite agree with one
+          another.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="icon">🎯</div>
+            <h3>More accurate matches</h3>
+            <p>Playlisty helps find the right tracks, not just the first vaguely similar result.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🖼️</div>
+            <h3>Playlist artwork too</h3>
+            <p>Bring across the details that make your playlists feel like yours.</p>
+          </div>
+          <div class="card">
+            <div class="icon">❤️</div>
+            <h3>Favourites included</h3>
+            <p>Move songs, albums and artists, not just standard playlists.</p>
+          </div>
+          <div class="card">
+            <div class="icon">✏️</div>
+            <h3>Preview and tweak</h3>
+            <p>Check matches, play tracks and fix anything before saving to Spotify.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="feature">
+          <div class="copy">
+            <h3>Import from Apple Music, web pages, files and more.</h3>
+            <p>Use Playlisty’s sources screen to bring in music from services, links, files and the places your
+              playlists actually live.</p>
+          </div>
+          <div class="phone"><img src="../assets/pfs-sources.png" alt="Playlisty playlist sources screen"></div>
+        </div>
+        <div class="feature">
+          <div class="copy">
+            <h3>Browse playlists and favourites before importing.</h3>
+            <p>Select the playlists, loved tracks and albums you want to take with you, instead of dragging everything
+              across blindly.</p>
+          </div>
+          <div class="phone"><img src="../assets/deezer.png" alt="Playlisty source library selection screen"></div>
+        </div>
+        <div class="feature">
+          <div class="copy">
+            <h3>Got text? Paste it into Scratchpad.</h3>
+            <p>Drop in a list of songs, a web link, a copied chart or a messy block of text and let Playlisty turn it
+              into something Spotify can use.</p>
+          </div>
+          <div class="phone"><img src="../assets/scratchpad.png" alt="Playlisty Scratchpad screen"></div>
+        </div>
+        <div class="feature">
+          <div class="copy">
+            <h3>Review, play and tweak before saving.</h3>
+            <p>Preview your playlist, check the match quality, skip anything wrong and keep control right up to the
+              final save.</p>
+          </div>
+          <div class="phone"><img src="../assets/review.png" alt="Playlisty review and preview screen"></div>
+        </div>
+        <div class="feature">
+          <div class="copy">
+            <h3>Save your way.</h3>
+            <p>Send everything to a new playlist, an existing playlist, or even a Siri Shortcut when you want the
+              process automated.</p>
+          </div>
+          <div class="phone"><img src="../assets/save.png" alt="Playlisty save to Spotify screen"></div>
+        </div>
+      </div>
+    </section>
+    <section id="how">
+      <div class="wrap">
+        <h2 class="section-title">How it works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Pick a source</h3>
+            <p>Apple Music, files, web pages, text, YouTube, Deezer and more.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Choose music</h3>
+            <p>Select playlists, albums, artists and favourites.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Match tracks</h3>
+            <p>Playlisty searches Spotify for the best results.</p>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <h3>Check it</h3>
+            <p>Preview, play, tweak or skip before saving.</p>
+          </div>
+          <div class="step">
+            <div class="num">5</div>
+            <h3>Save to Spotify</h3>
+            <p>Create a new playlist or update an existing one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="download" class="wrap">
+      <div class="quote">
+        <p>Your playlists are part of your life. Playlisty helps make sure they are not left behind when you move to
+          Spotify.</p>
+        <a href="https://apps.apple.com/us/app/playlisty-for-spotify/id6478105775?itscg=30200&itsct=apps_box_badge&mttnsubad=6478105775"
+          style="display: inline-block;">
+          <img
+            src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1713484800"
+            alt="Download on the App Store"
+            style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+        </a>
+        <span class="fine">Free to start.
+          One-time upgrade available. Requires Spotify.</span>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <p>© Obdura. Playlisty for Spotify. Read about our <a href="../terms/playlisty-tnc.html">Terms and Conditions</a>
+        and <a href="../privacy/playlisty-privacy.html">Privacy Policy</a> here.</p>
+    </div>
+</body>
 
-  </html>
+</html>
