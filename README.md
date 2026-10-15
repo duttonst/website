@@ -2,8 +2,14 @@
 - Perform all edits in VSCode with Codex
 - To turn-over a new version:
 1. Clone to a local filesystem
-2. Right-click "Compress" the home directory
-3. Upload to public_html
-4. Uncompress
-5. If `.htaccess` has changed, upload the project root `.htaccess` separately to `public_html/.htaccess`; it is not included in the `home` archive.
+2. From the project root, create a fresh deployment archive:
+
+   ```sh
+   rm -f home.zip && COPYFILE_DISABLE=1 zip -r home.zip home .htaccess -x '*.DS_Store' '*/._*' '__MACOSX/*' '*/__MACOSX/*' '*/.Spotlight-V100/*' '*/.Trashes/*' '*/.fseventsd/*'
+   ```
+
+   This includes `home/` and the root `.htaccess`, excludes macOS metadata, and replaces the old archive so deleted files are not retained.
+
+3. Upload `home.zip` to `public_html`.
+4. Uncompress it there, including the root `.htaccess`.
 That's it.
