@@ -5,4 +5,5 @@
 2. Right-click "Compress" the home directory
 3. Upload to public_html
 4. Uncompress
+5. If `.htaccess` has changed, upload the project root `.htaccess` separately to `public_html/.htaccess`; it is not included in the `home` archive.
 That's it.
