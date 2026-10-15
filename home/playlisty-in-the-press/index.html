@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playlisty in the press — Playlisty for Apple Music</title>
+  <meta name="description" content="Articles, reviews and independent blogs mentioning Playlisty for Apple Music, including What Hi-Fi?, MacFormat and more." />
+  <link rel="canonical" href="https://www.obdura.com/playlisty-in-the-press/" />
+  <link rel="icon" type="image/x-icon" href="/home/assets/favicon.ico" />
+  <style>
+    :root {
+      --bg: #07070b;
+      --panel: rgba(255, 255, 255, .075);
+      --panel2: rgba(255, 255, 255, .11);
+      --text: #f7f7fb;
+      --muted: #b9b8c6;
+      --hot: #ff2d55;
+      --hot2: #ff4f7b;
+      --green: #1ed760;
+      --line: rgba(255, 255, 255, .13);
+      --blue: #5ac8fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 8%, rgba(255, 45, 85, .34), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(90, 200, 250, .22), transparent 30%),
+        linear-gradient(180deg, #11111a 0%, var(--bg) 42%, #050507 100%);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1180px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 26px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 7, 11, .58);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 850;
+      font-size: 1.35rem;
+      letter-spacing: -.04em;
+      text-decoration: none;
+    }
+
+    .product-icon {
+      width: 59px;
+      height: 59px;
+      border-radius: 13px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav-actions a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    .nav-actions a:hover,
+    .nav-actions a:focus-visible {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 36px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .95rem;
+    }
+
+    footer a {
+      color: var(--hot2);
+    }
+
+    @media (max-width: 620px) {
+      header {
+        padding: 12px 0;
+      }
+
+      .brand>span {
+        display: none;
+      }
+
+      .product-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 11px;
+      }
+
+      .nav-actions {
+        gap: 14px;
+      }
+
+      .nav-actions a {
+        font-size: .88rem;
+      }
+    }
+  
+    .eyebrow { color: var(--hot2); text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 900; }
+    .lead { color: var(--muted); font-size: clamp(1.18rem, 2vw, 1.52rem); max-width: 760px; }
+    .press-hero { padding: 80px 0 48px; }
+    .press-hero h1 { font-size: clamp(3rem, 7vw, 6rem); line-height: 1; letter-spacing: -.06em; margin: 18px 0 24px; max-width: 900px; }
+    .press-list { list-style: none; padding: 0 0 80px; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .press-card { padding: 32px; border: 1px solid var(--line); border-radius: 28px; background: var(--panel); display: flex; flex-direction: column; }
+    .publication { font-weight: 850; font-size: 1.15rem; }
+    .press-card .meta { color: var(--muted); font-size: .85rem; margin: 8px 0 24px; }
+    .press-card h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.15; letter-spacing: -.03em; }
+    .press-card h2 a { color: var(--text); text-decoration: none; }
+    .press-card p { color: var(--muted); margin: 0 0 24px; }
+    .read-link { color: #ff7595; font-weight: 750; margin-top: auto; text-underline-offset: 4px; }
+    a:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+    .press-card h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .skip-link { position: absolute; left: 12px; top: -80px; z-index: 30; background: var(--bg); color: var(--text); padding: 12px; }
+    .skip-link:focus { top: 12px; }
+    @media (max-width: 700px) { .press-list { grid-template-columns: 1fr; } .press-hero { padding-top: 52px; } .press-card { padding: 24px; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="/home/pfam/">
+          <img class="product-icon" src="/home/assets/PfAM.png" alt="Playlisty for Apple Music icon" />
+          <span>Playlisty <span style="color:var(--hot)">for Apple Music</span></span>
+        </a>
+        <div class="nav-actions">
+          <a href="/home/pfam/">Overview</a>
+          <a href="/home/support/playlisty/">Support</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <div class="press-hero">
+      <div class="eyebrow">Reviews, articles &amp; blogs</div>
+      <h1>Playlisty in the press.</h1>
+      <p class="lead">Discover what writers and music lovers have to say about Playlisty for Apple Music.</p>
+      <p style="color:var(--muted)">A selection of independent coverage. Features and pricing mentioned reflect the time of publication.</p>
+    </div>
+    <ul class="press-list" aria-label="Articles and blogs mentioning Playlisty">
+        <li class="press-card">
+          <div class="publication">Lifehacker</div>
+          <p class="meta">2022 · App roundup</p>
+          <h2><a href="https://lifehacker.com/lifehackers-22-favorite-apps-of-2022-1849898715">Lifehacker’s 22 Favorite Apps of 2022</a></h2>
+          <p>Playlisty features in Lifehacker’s roundup of its favourite apps of 2022.</p>
+          <a class="read-link" href="https://lifehacker.com/lifehackers-22-favorite-apps-of-2022-1849898715">Read the article <span aria-hidden="true">↗</span></a>
+        </li>
+        <li class="press-card">
+          <div class="publication">What Hi-Fi?</div>
+          <p class="meta">12 August 2024 · Feature</p>
+          <h2><a href="https://www.whathifi.com/features/i-switched-from-spotify-to-apple-music-with-this-app-that-saved-my-playlists-and-my-sanity">I switched from Spotify to Apple Music with this app that saved my playlists (and my sanity)</a></h2>
+          <p>Lewis Empson shares his experience moving to Apple Music, including reviewing matches before saving playlists.</p>
+          <a class="read-link" href="https://www.whathifi.com/features/i-switched-from-spotify-to-apple-music-with-this-app-that-saved-my-playlists-and-my-sanity">Read the article <span aria-hidden="true">↗</span></a>
+        </li>
+        <li class="press-card">
+          <div class="publication">MacFormat</div>
+          <p class="meta">December 2024 · Magazine · PDF</p>
+          <h2><a href="https://www.obdura.com/wp/wp-content/uploads/2025/01/MAC411.skills6.pdf">Move your music playlists</a></h2>
+          <p>A step-by-step magazine guide to moving Spotify playlists to Apple Music with Playlisty.</p>
+          <a class="read-link" href="https://www.obdura.com/wp/wp-content/uploads/2025/01/MAC411.skills6.pdf">Read the PDF <span aria-hidden="true">↗</span></a>
+        </li>
+        <li class="press-card">
+          <div class="publication">Mac O’Clock · Medium</div>
+          <p class="meta">Comparison</p>
+          <h2><a href="https://medium.com/macoclock/playlist-transfer-tools-which-is-best-2c908f46d591">Playlist transfer tools: which is best?</a></h2>
+          <p>A comparison of playlist transfer tools that tests Playlisty’s matching accuracy, speed and usability.</p>
+          <a class="read-link" href="https://medium.com/macoclock/playlist-transfer-tools-which-is-best-2c908f46d591">Read the comparison <span aria-hidden="true">↗</span></a>
+        </li>
+        <li class="press-card">
+          <div class="publication">iPhoneBlog.de</div>
+          <p class="meta">23 September 2024 · Blog · German</p>
+          <h2><a href="https://www.iphoneblog.de/2024/09/23/playlisty-zieht-wiedergabelisten-um/">„Playlisty“ zieht Wiedergabelisten um</a></h2>
+          <p>Alex Olma explores playlist transfers and importing web links and track lists with Scratchpad.</p>
+          <a class="read-link" href="https://www.iphoneblog.de/2024/09/23/playlisty-zieht-wiedergabelisten-um/">Read the article <span aria-hidden="true">↗</span></a>
+        </li>
+    </ul>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p>© Obdura. <a href="/home/pfam/">Playlisty for Apple Music</a> · <a href="/home/terms/playlisty-tnc.html">Terms and Conditions</a> · <a href="/home/privacy/playlisty-privacy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+</body>
+</html>

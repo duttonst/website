@@ -5,6 +5,9 @@ RewriteEngine On
 RewriteRule ^(?:playlisty|pfam|playlisty-for-spotify|pfs)/support(?:/(.*))?$ /home/support/playlisty/$1 [R=301,L]
 RewriteRule ^(?:playlisty|pfam|playlisty-for-spotify|pfs)/privacy/?$ /home/privacy/playlisty-privacy.html [R=301,L]
 
+# Press page
+RewriteRule ^playlisty-in-the-press/?$ /home/playlisty-in-the-press/ [L]
+
 # Product aliases
 RewriteRule ^(?:playlisty|pfam)(?:/(.*))?$ /home/pfam/$1 [R=301,L]
 RewriteRule ^(?:playlisty-for-spotify|pfs)(?:/(.*))?$ /home/pfs/$1 [R=301,L]
